@@ -1,0 +1,12 @@
+package com.hari.dsal.practice;
+
+public class TreeNode {
+
+	int val;
+	TreeNode left;
+	TreeNode right;
+
+	TreeNode(int x) {
+		val = x;
+	}
+}
