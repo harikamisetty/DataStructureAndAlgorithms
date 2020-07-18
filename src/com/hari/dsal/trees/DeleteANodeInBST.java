@@ -40,6 +40,9 @@ public class DeleteANodeInBST {
 
 		root.left.left = new TreeNode(5);
 		root.left.right = new TreeNode(8);
+		
+		root.left.right.left = new TreeNode(6);
+		root.left.right.right = new TreeNode(12);
 
 		root.right.left = new TreeNode(25);
 		root.right.right = new TreeNode(35);
@@ -50,6 +53,6 @@ public class DeleteANodeInBST {
 
 	public static void main(String[] args) {
 		DeleteANodeInBST vbst = new DeleteANodeInBST();
-		vbst.deleteNode(vbst.initiateTree(),30);
+		vbst.deleteNode(vbst.initiateTree(),10);
 	}
 }

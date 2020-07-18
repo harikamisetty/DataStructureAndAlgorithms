@@ -108,7 +108,7 @@ public class NumberOfIslands {
 						  { '0', '0', '0', '0', '0' } };*/
 		
 		char[][] grid = { { '1', '1' }, 
-				  		  { '0', '0' } 
+				  		  { '1', '1' } 
 				  		 };
 
 		System.out.println(numIslands(grid));

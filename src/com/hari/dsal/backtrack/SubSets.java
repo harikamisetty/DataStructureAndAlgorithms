@@ -7,6 +7,7 @@ import java.util.List;
 public class SubSets {
 
 	private List<List<Integer>> getSubSets(int[] input){
+		Arrays.sort(input);
 		List<List<Integer>> res = new ArrayList<>();
 		subsetCombinations(res, new ArrayList<>(), input,0);
 		return res;
@@ -17,6 +18,9 @@ public class SubSets {
 		res.add(new ArrayList<>(temp));
 
 		for(int i=start; i<input.length; i++) {
+			if(i > start && input[i] == input[i-1]) 
+				continue; // Skip duplicates.
+			
 			temp.add(input[i]);
 			subsetCombinations(res, temp, input, i+1);
 			temp.remove(temp.size()-1);
@@ -24,7 +28,7 @@ public class SubSets {
 	}
 	public static void main(String[] args) {
 		SubSets cs_I = new SubSets();
-		int[] input = {1,2,3};
+		int[] input = {4,4,4,1,4};
 		Arrays.sort(input);
 		List<List<Integer>> res = cs_I.getSubSets(input);
 

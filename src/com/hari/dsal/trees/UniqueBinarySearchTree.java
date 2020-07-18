@@ -16,15 +16,6 @@ public class UniqueBinarySearchTree {
 		}
 		return G[num];
 	}
-	public static void main(String[] args) {
-		UniqueBinarySearchTree ubst = new UniqueBinarySearchTree();
-		//System.out.println(ubst.getUniqueBinaryTrees(3));
-		
-		// Best Approch
-		List<TreeNode> results = generateTrees(3);
-		
-		System.out.println(results.size());
-	}
 	
 	private static List<TreeNode> generateTrees(int num) {
 		return genTrees(1, num);
@@ -53,5 +44,15 @@ public class UniqueBinarySearchTree {
 			}
 		}
 		return list;
+	}
+	
+	public static void main(String[] args) {
+		UniqueBinarySearchTree ubst = new UniqueBinarySearchTree();
+		//System.out.println(ubst.getUniqueBinaryTrees(3));
+		
+		// Best Approch
+		List<TreeNode> results = generateTrees(3);
+		
+		System.out.println(results.size());
 	}
 }

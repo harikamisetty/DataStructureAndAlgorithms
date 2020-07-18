@@ -15,12 +15,12 @@ public class ExcelColumnTitle {
 			if (rem == 0) {
 				columnName.append("Z");
 				columnNumber = (columnNumber / 26) - 1;
-			} else // If remainder is non-zero
+			} else // If remainder is non-zero  
 			{
 				columnName.append((char) ((rem - 1) + 'A'));
 				columnNumber = columnNumber / 26;
 			}
-		}
+		}   
 
 		// Reverse the string and print result
 		System.out.println(columnName.reverse());

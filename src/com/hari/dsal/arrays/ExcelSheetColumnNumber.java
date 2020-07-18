@@ -15,7 +15,7 @@ public class ExcelSheetColumnNumber {
 
 	// Driver Code
 	public static void main(String[] args) {
-		System.out.println(titleToNumber("CDA"));
+		System.out.println(titleToNumber("AAB"));
 
 		System.out.println('C' - 'A');
 		System.out.println(27 / 3);
