@@ -20,6 +20,8 @@ public class BitExample {
 		System.out.println(7|7);
 		System.out.println(7^7);
 		System.out.println(7>>>1);
+		System.out.println(6&6-1);
+		System.out.println(6&6|5);
 	}
 	
 	public static int getLeftBit(int num, int count) {

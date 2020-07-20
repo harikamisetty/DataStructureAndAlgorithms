@@ -41,6 +41,12 @@ public class DisjointSet {
 	            }
 	        }
 	    }
+	    for(int p=0;p<board.length;p++) {
+			System.out.println("\n");
+			for(int q=0;q<board[0].length;q++) {
+				System.out.print(board[p][q]);
+			}
+		}
 	}
 	
 	public void merge(char[][] board, int i, int j){
@@ -58,7 +64,7 @@ public class DisjointSet {
 	          && board[x][y]=='O'){
 	            merge(board, x, y);
 	        }
-	    }
+	    }   
 	}
 	
 	public static void main(String[] args) {
@@ -71,5 +77,7 @@ public class DisjointSet {
 		
 		DisjointSet gs = new DisjointSet();
 		gs.solve(grid);
+		
+		
 	}
 }

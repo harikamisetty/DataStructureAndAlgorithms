@@ -13,7 +13,9 @@ public class NoOfOnes {
 		for(int k=0; k <= 7; k++) {
 			System.out.print(noOfOnes(k)+ "--");
 		}
-	}
+		
+		System.out.println(7&8-1);
+	} 
 
 	private static int noOfOnes(int i) {
 		

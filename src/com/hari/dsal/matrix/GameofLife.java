@@ -89,5 +89,106 @@ public class GameofLife {
 
 		return result;
 	}
+	
+	
+	// ******** Best solution
+	//mark die -> live , -1
+	//mark live -> die , 2
+	//updtae() -1 -> 1,2 => 0
+	
+	final static int[][] dirs = { { 0, -1 }, { 0, 1 }, { 1, 0 }, { -1, 0 }, { 1, 1 }, { 1, -1 }, { -1, 1 },
+			{ -1, -1 } };
+
+	private void gameOfLift(int[][] board) {
+
+		if (board == null || board.length == 0)
+			return;
+		int rows = board.length, cols = board[0].length;
+
+		for (int i = 0; i < rows; i++) {
+			for (int j = 0; j < cols; j++) {
+				if (board[i][j] == 0) {
+					int lives = count(board, i, j);
+					if (lives == 3) {
+						board[i][j] = -1;
+					}
+				}
+				if (board[i][j] == 1) {
+					int lives = count(board, i, j);
+					if (lives < 2 || lives > 3) {
+						board[i][j] = 2;
+					}
+				}
+			}
+		}
+		updtae(board, rows, cols);
+	}
+
+	private void updtae(int[][] board, int rows, int cols) {
+
+		for (int i = 0; i < rows; i++) {
+			for (int j = 0; j < cols; j++) {
+
+				if (board[i][j] == -1) {
+					board[i][j] = 1;
+				}
+				if (board[i][j] == 2) {
+					board[i][j] = 0;
+				}
+			}
+		}
+	}
+
+	private int count(int[][] board, int row, int col) {
+		int res = 0;
+
+		for (int[] dir : dirs) {
+			int newrow = row + dir[0];
+			int newcol = col + dir[1];
+
+			if (newrow >= 0 && newrow < board.length && newcol >= 0 && newcol < board[0].length
+					&& (board[newrow][newcol] == 1 || board[newrow][newcol] == 2)) {
+				res++;
+			}
+		}
+		return res;
+	}
+	
+	public static void main(String[] args) {
+		
+		int[][] board = {
+		                 {0,1,0},
+		                 {0,0,1},
+		                 {1,1,1},
+		                 {0,0,0}
+		                 };
+		
+		GameofLife gol = new GameofLife();
+		
+		gol.gameOfLift(board);
+		
+		int rows = board.length;
+		int cols = board[0].length;
+		
+		for (int i = 0; i < rows; i++) {
+			System.out.println("\n");
+			for (int j = 0; j < cols; j++) {
+				System.out.print(board[i][j]);
+			}
+		}
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
