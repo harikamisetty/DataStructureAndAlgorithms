@@ -1,50 +1,79 @@
 package com.hari.dsal.trees;
 
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Stack;
 
 public class FlattenBinaryTree {
-	
-	private static void flattenTheTree(TreeNode root) {
-		Queue results = new LinkedList<>();
-		Stack tempStack = new Stack();
 
-		tempStack.push(root);
-		System.out.println("\n Flatten TREE Results ............");
-		while (!tempStack.isEmpty()) {
+	public static void main(String[] args) {
+		System.out.println("ZigZag Order traversal of binary tree is");
+		FlattenBinaryTree fb = new FlattenBinaryTree();
 
-			TreeNode curr = (TreeNode) tempStack.pop();
-			results.add(curr);
-			if (curr != null) {
-				if (curr.left != null) {
-					tempStack.push(curr.left);
-				}
+		fb.flattenTheTreeStack(fb.initiateTree());
+		fb.recursiveFlatTree(fb.initiateTree());
 
-				if (curr.right != null) {
-					tempStack.push(curr.right);
-				}
-				if (curr.left != null) {
-					TreeNode rChild = curr.right;
-					curr.right = curr.left;
-					curr.left = null;
+	}
 
-					// find the right most child
-					TreeNode rightMostChild = curr.right;
+	private TreeNode processnode = null;
 
-					while (rightMostChild.right != null) {
-						rightMostChild = rightMostChild.right;
-					}
+	private void flattenTheTree(TreeNode root) {
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		TreeNode p = root;
 
-					rightMostChild.right = rChild;
-				}
+		while (p != null || !stack.empty()) {
+
+			if (p.right != null) {
+				stack.push(p.right);
 			}
-		}
 
-		// Print Queue Values
-		while (!results.isEmpty()) {
-			TreeNode printNode = (TreeNode) results.poll();
-			System.out.print(printNode.val + " ");
+			if (p.left != null) {
+				p.right = p.left;
+				p.left = null;
+			} else if (!stack.empty()) {
+				TreeNode temp = stack.pop();
+				p.right = temp;
+			}
+
+			p = p.right;
 		}
+	}
+
+	private void flattenTheTreeStack(TreeNode root) {
+		flattenTheTree(root);
+		TreeBFS pan = new TreeBFS();
+		pan.BFT(root);
+	}
+
+	private void flatTree(TreeNode root) {
+		if (root == null)
+			return;
+		flatTree(root.right);
+		flatTree(root.left);
+
+		root.right = processnode;
+		root.left = null;
+
+		processnode = root;
+	}
+
+	private TreeNode initiateTree() {
+
+		TreeNode root = new TreeNode(20);
+		root.left = new TreeNode(10);
+		root.right = new TreeNode(30);
+
+		root.left.left = new TreeNode(5);
+		root.left.right = new TreeNode(8);
+
+		root.right.left = new TreeNode(25);
+		root.right.right = new TreeNode(35);
+
+		return root;
+
+	}
+
+	private void recursiveFlatTree(TreeNode root) {
+		flatTree(root);
+		TreeBFS pan = new TreeBFS();
+		pan.BFT(root);
 	}
 }

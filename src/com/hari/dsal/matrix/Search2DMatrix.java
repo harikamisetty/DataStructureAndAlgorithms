@@ -4,10 +4,14 @@ public class Search2DMatrix {
 	public static void main(String[] args) {
 		int[][] spiralMatrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
 
-		boolean result = search(spiralMatrix, 3);
-		boolean f = searchMatrix(spiralMatrix, 3);
+		int[][] matrix = { { 1, 3, 5, 7 }, { 10, 11, 16, 20 }, { 23, 30, 34, 50 } };
 
+		boolean result = search(matrix, 3);
+		boolean f = searchMatrix(matrix, 3);
+		Search2DMatrix sm = new Search2DMatrix();
 		System.out.println(result);
+		System.out.println(f);
+		System.out.println(sm.searchMatrix1(matrix, 3));
 	}
 
 	private static boolean search(int[][] spiralMatrix, int target) {
@@ -49,4 +53,25 @@ public class Search2DMatrix {
 		return false;
 	}
 
+	public boolean searchMatrix1(int[][] matrix, int target) {
+
+		int m = matrix.length;
+		int n = matrix[0].length;
+		int low = 0, high = m * n - 1;
+
+		while (low <= high) {
+			int mid = (low + high) / 2;
+
+			int row = mid / n;
+			int col = mid % n;
+
+			if (matrix[row][col] == target)
+				return true;
+			if (matrix[row][col] > target)
+				high = mid - 1;
+			else
+				low = mid + 1;
+		}
+		return false;
+	}
 }

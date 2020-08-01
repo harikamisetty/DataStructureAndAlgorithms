@@ -2,7 +2,7 @@ package com.hari.dsal.linkedlist;
 
 public class AddTwoNumbers {
 
-	public static ListNode addTwoNumbers(ListNode l1, ListNode l2) { // Best Solution
+	public static ListNode addTwoNumbers(ListNode l1, ListNode l2) { // Best Solution but doesn't work for all scenarios
 		// check if the linked list is null
 		if (l1 == null && l2 == null)
 			return null;
@@ -42,7 +42,7 @@ public class AddTwoNumbers {
 		return num;
 	}
 	
-	public ListNode addTwoNumbers1(ListNode l1, ListNode l2) {
+	public static ListNode addTwoNumbers1(ListNode l1, ListNode l2) {
         // check if the linked list is null
         if (l1 == null && l2 == null) return null;
          
@@ -100,14 +100,14 @@ public class AddTwoNumbers {
 
 			nodea2.next = null;
 			
-			ListNode resNode = addTwoNumbers(head, heada);
+			ListNode resNode = addTwoNumbers1(head, heada);
 			
 			while(resNode.next != null) {
-				System.out.println(resNode.val);
+				System.out.print(resNode.val);
 				resNode = resNode.next;
 				//resNode.next = resNode.next.next;
 			}
-			System.out.println(resNode.val);
+			System.out.print(resNode.val);
 	}
 
 }
