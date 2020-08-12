@@ -1,6 +1,11 @@
 package com.hari.dsal.strings;
 
 public class WildcardMatching {
+	public static void main(String[] args) {
+		WildcardMatching wcm = new WildcardMatching();
+		System.out.println(wcm.isMatch("abc", "*c"));
+	}
+
 	public boolean isMatch(String s, String p) {
 		if (p == null || p.length() == 0) {
 			return s == null || s.length() == 0;

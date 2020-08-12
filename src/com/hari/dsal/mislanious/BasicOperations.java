@@ -39,7 +39,7 @@ public class BasicOperations {
 		}
 		// #3
 		List<Integer> integerList = Arrays.asList(6, 3, 8, 9, 2, 45, 76);
-
+		// List<Integer> sed = Arrays.asList(A);
 		// List to Array
 		int[] intArr = integerList.stream().mapToInt(Integer::intValue).toArray();
 
