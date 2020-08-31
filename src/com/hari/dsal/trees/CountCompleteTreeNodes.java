@@ -13,11 +13,18 @@ public class CountCompleteTreeNodes {
 						: (1 << h - 1) + countNodes(root.left);
 	}
 	
+	private int count(TreeNode root) {
+		if(root == null)
+			return 0;
+		return 1+count(root.right)+count(root.left);
+	}
+	
 	public static void main(String args[]) {
 		CountCompleteTreeNodes tree = new CountCompleteTreeNodes();
 	
 		System.out.println("Level order traversal of binary tree is ");
 		System.out.println(tree.countNodes(tree.initiateTree()));
+		System.out.println(tree.count(tree.initiateTree()));
 	}
 	
 	private TreeNode initiateTree() {
