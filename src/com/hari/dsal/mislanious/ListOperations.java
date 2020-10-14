@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ListOperations {
@@ -63,6 +65,10 @@ public class ListOperations {
 		}
 		res.stream().mapToInt(Integer::intValue).toArray();
 		res.parallelStream().mapToInt(Integer::intValue).toArray();
+		
+		Map<String, List<String>> map = new HashMap<>();
+		// Convert Map values to List
+		List<List<String>> templ= new ArrayList<List<String>>(map.values()); 
 	}
 }
 

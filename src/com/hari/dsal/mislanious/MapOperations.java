@@ -1,5 +1,6 @@
 package com.hari.dsal.mislanious;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -50,5 +51,7 @@ public class MapOperations {
 		Map<String, Integer> limitmap = new LinkedHashMap<>();
 		reverseSortedMap.entrySet().stream().limit(3).forEachOrdered(x -> limitmap.put(x.getKey(), x.getValue()));
 		System.out.println("Limit map details : " + limitmap);
+		// GET MAX VALUE KEY
+		System.out.println(Collections.max(unSortedMap.entrySet(), Map.Entry.comparingByValue()).getKey());
 	}
 }

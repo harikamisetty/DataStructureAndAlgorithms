@@ -26,7 +26,7 @@ public class FirstUniqueCharacterInaString {
 	
 	public static void main(String[] args) {
 		FirstUniqueCharacterInaString fucs = new FirstUniqueCharacterInaString();
-		System.out.println(fucs.firstUniqChar("tests"));
+		System.out.println(fucs.firstUniqChar("bd"));
 	}
 
 }

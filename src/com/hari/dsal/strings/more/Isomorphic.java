@@ -7,7 +7,7 @@ public class Isomorphic {
 
 	public static void main(String[] args) {
 		String string1 = "egg";
-		String string2 = "app";
+		String string2 = "apg";
 		System.out.println(isIsomorphic(string1, string2));
 	}
 
