@@ -32,9 +32,11 @@ public class TopKFrequentWords_L692 {
 	}
 
 	public static void main(String[] args) {
-		
-		String str[] = {"i", "love", "leetcode", "i", "love", "coding"};
+
+		String str[] = { "i", "love", "leetcode", "i", "love", "coding" };
 		TopKFrequentWords_L692 t = new TopKFrequentWords_L692();
-		t.topKFrequent(str, 3);
+		List<String> res=t.topKFrequent(str, 2);
+		
+		System.out.println(res);
 	}
 }

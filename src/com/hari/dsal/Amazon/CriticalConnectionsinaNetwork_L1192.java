@@ -12,7 +12,7 @@ public class CriticalConnectionsinaNetwork_L1192 {
 	int id; // Current id
 	List<List<Integer>> ans;// List of all the critical connections
 
-	public List<List<Integer>> criticalConnections(int n, List<List<Integer>> connections) {
+	public List<List<Integer>> criticalConnections1(int n, List<List<Integer>> connections) {
 		// Init the instance variables
 		visited = new boolean[n];
 		graph = new List[n];
@@ -66,8 +66,76 @@ public class CriticalConnectionsinaNetwork_L1192 {
 			}
 		}
 	}
-	
+
+	// Solution 2
+	List<List<Integer>> results;
+	// List<Integer>[] graph;
+	int[] visitedTimes;
+	int[] lowTimes;
+	int time;
+
+	public List<List<Integer>> criticalConnections(int n, List<List<Integer>> connections) {
+
+		if (connections == null)
+			return null;
+
+		results = new ArrayList<>();
+		graph = new ArrayList[n];
+		visitedTimes = new int[n];
+		lowTimes = new int[n];
+
+		// build graph using adjacency list
+		buildGraph(connections);
+		boolean[] visited = new boolean[n];
+		dfs(visited, 0, -1);
+
+		return results;
+	}
+
+	// dfs graph
+	// Torzan Algorithms
+	private void dfs(boolean[] visited, int currentNode, int parentNode) {
+		visited[currentNode] = true;
+		visitedTimes[currentNode] = lowTimes[currentNode] = time++;
+
+		for (int neighbor : graph[currentNode]) {
+			if (neighbor == parentNode)
+				continue;
+			if (!visited[neighbor]) {
+				dfs(visited, neighbor, currentNode);
+				lowTimes[currentNode] = Math.min(lowTimes[currentNode], lowTimes[neighbor]);
+				if (visitedTimes[currentNode] < lowTimes[neighbor])
+					results.add(Arrays.asList(currentNode, neighbor));
+			} else {
+				lowTimes[currentNode] = Math.min(lowTimes[currentNode], visitedTimes[neighbor]);
+			}
+		}
+	}
+
+	// build grapth from given connections
+	// using adjacency list
+	private void buildGraph(List<List<Integer>> connections) {
+		for (int i = 0; i < graph.length; i++) {
+			graph[i] = new ArrayList<>();
+		}
+
+		for (List<Integer> edge : connections) {
+			int u = edge.get(0);
+			int v = edge.get(1);
+			graph[u].add(v);
+			graph[v].add(u);
+		}
+	}
+
 	public static void main(String[] args) {
+		CriticalConnectionsinaNetwork_L1192 cc = new CriticalConnectionsinaNetwork_L1192();
+		int n=4;
+		List<List<Integer>> connections = new ArrayList<List<Integer>>();
+		connections.add(Arrays.asList(0,1));
+		connections.add(Arrays.asList(1,2));
+		connections.add(Arrays.asList(2,0));
+		connections.add(Arrays.asList(1,3));		
 		
+		cc.criticalConnections(n, connections);
 	}
 }

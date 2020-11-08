@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 public class TwoSetsNearSum {
 	
+	// Find middle element and compare with Sum and allocate the numbers to sets
 	public static void minSum(List<Integer> set) {
 		List<Integer> set1 = new ArrayList<>();
 		List<Integer> set2 = new ArrayList<>();

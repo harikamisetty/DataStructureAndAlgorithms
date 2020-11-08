@@ -47,11 +47,20 @@ public class MapOperations {
 		unSortedMap.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
 				.forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));
 		System.out.println("Reverse Sorted by value in Map   : " + reverseSortedMap);
-
+		
+		
+		// Get First top 3 Key, Value pairs
 		Map<String, Integer> limitmap = new LinkedHashMap<>();
 		reverseSortedMap.entrySet().stream().limit(3).forEachOrdered(x -> limitmap.put(x.getKey(), x.getValue()));
 		System.out.println("Limit map details : " + limitmap);
+		
 		// GET MAX VALUE KEY
 		System.out.println(Collections.max(unSortedMap.entrySet(), Map.Entry.comparingByValue()).getKey());
+		
+		// GET First Key
+		System.out.println(unSortedMap.keySet().toArray()[0]);
+		
+		// GET First Value
+		System.out.println(unSortedMap.values().toArray()[0]);
 	}
 }

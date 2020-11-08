@@ -1,6 +1,7 @@
 package com.hari.dsal.mislanious;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class StringOperations {
 	
@@ -56,5 +57,34 @@ public class StringOperations {
 		}
 		
 		System.out.println(fs.compareTo(fs));
+		
+		
+		// Compare
+		/*
+		 * 0: if (x==y)
+		  -1: if (x < y)
+		   1: if (x > y)
+		 */
+		String []st1 ={"hari","koman","amma"};		
+		
+		Comparator<String> myComp = new Comparator<String>() {
+
+			@Override
+			public int compare(String o1, String o2) {
+				boolean ch = Character.isDigit(o1.charAt(0));
+				if(ch)
+					return -1;
+				int val = o1.compareTo(o2);
+				System.out.println(val);
+			return val;
+			}			
+		};
+		Arrays.sort(st1, myComp);
+		
+		for(String val : st1) {
+			System.out.println(val);
+		}
+		
+		System.out.println("gari".compareTo("amma"));
 	}
 }

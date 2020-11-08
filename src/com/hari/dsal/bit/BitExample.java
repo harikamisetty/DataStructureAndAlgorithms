@@ -22,6 +22,15 @@ public class BitExample {
 		System.out.println(7>>>1);
 		System.out.println(6&6-1);
 		System.out.println(6&6|5);
+		System.out.println(1&1);
+		System.out.println(1&0);
+		System.out.println(0&0);
+		System.out.println(1|1);
+		System.out.println(1|0);
+		System.out.println(0|0);
+		System.out.println(1^1);
+		System.out.println(1^0);
+		System.out.println(0^0);
 	}
 	
 	public static int getLeftBit(int num, int count) {
