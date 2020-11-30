@@ -7,6 +7,8 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.stream.Collectors;
 
 public class ListOperations {
@@ -90,7 +92,12 @@ public class ListOperations {
 		for(List lists : arrlist) {
 			System.out.println(lists);
 		}	
-		
+		Queue<Long> small = new PriorityQueue<>();
+		small.add((long)20);
+		small.add((long)10);
+		small.add((long)5);
+		small.add((long)30);
+		System.out.println(small.peek());
 	}
 }
 

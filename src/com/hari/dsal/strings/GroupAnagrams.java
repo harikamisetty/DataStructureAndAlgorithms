@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class GroupAnagrams {
 	
-	public List<List<String>> groupAnagrams(String[] strs){
+	public List<List<String>> groupAnagrams(String[] strs){ // Time : O(NlogN)
 		if(strs == null || strs.length ==0)
 			return null;
 		Map<String, List<String>> map = new HashMap<>();
@@ -26,7 +26,7 @@ public class GroupAnagrams {
 		return new ArrayList<List<String>>(map.values()); // Convert map values into List<List<String>>
 	}
 	
-	public List<List<String>> groupAnagrams1(String[] strs) {
+	public List<List<String>> groupAnagrams1(String[] strs) { // Time : O(N)
 		if (strs.length == 0)
 			return new ArrayList();
 		Map<String, List> ans = new HashMap<String, List>();

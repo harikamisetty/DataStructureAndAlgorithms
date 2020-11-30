@@ -19,7 +19,7 @@ public class PathSum_I_II_III {
 	
 	// Path Sum II
 	private List<List<Integer>> pathSumList(TreeNode root, int sum){
-		List<List<Integer>> result = new LinkedList<List<Integer>>();
+		List<List<Integer>> result = new LinkedList<>();
 		List<Integer> currentResult = new LinkedList<Integer>();
 		
 		pathSum(root, sum, currentResult, result);
@@ -47,25 +47,27 @@ public class PathSum_I_II_III {
 	}
 	
 	// Path Sum III
-	private int pathSum(TreeNode root, int sum) {
+	int count = 0;
+
+	public int pathSum(TreeNode root, int sum) {
+		if (root == null)
+			return 0;
+		helper(root, sum);
 		
-		Map<Integer, Integer> preSum = new HashMap<Integer, Integer>();
-		preSum.put(0, 1);
-		return helper(root, 0, sum, preSum);
+		pathSum(root.left, sum);
+		pathSum(root.right, sum);
+		
+		return count;
 	}
 
-	private int helper(TreeNode root, int currentSum, int target, Map<Integer, Integer> preSum) {
+	public void helper(TreeNode root, int sum) {
+		if (root == null)
+			return;
 		
-		if(root == null)
-			return 0;
+		if (root.val - sum == 0)
+			count++;
 		
-		currentSum = currentSum + root.val;
-		int res = preSum.getOrDefault(currentSum-target, 0);
-		preSum.put(currentSum, preSum.getOrDefault(currentSum, 0)+1);
-		
-		res= res +helper(root.left, currentSum, target, preSum) + helper(root.right, currentSum, target, preSum);
-		preSum.put(currentSum, preSum.get(currentSum)-1);
-		
-		return res;
+		helper(root.left, sum - root.val);
+		helper(root.right, sum - root.val);
 	}
 }

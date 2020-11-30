@@ -46,7 +46,7 @@ public class WordLadder {
 		wordDist.add("dog");
 		wordDist.add("lot");
 		wordDist.add("log");
-		wordDist.add("cog");
+		//wordDist.add("cog");
 
 		System.out.println(wl.ladderLength("hit", "cog", wordDist));
 

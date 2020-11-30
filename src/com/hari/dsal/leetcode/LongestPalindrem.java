@@ -7,8 +7,7 @@ public class LongestPalindrem {
             return s;
         }
  
-        int length = s.length();
-        
+        int length = s.length();        
         boolean[][] isPalindrome = new boolean[length][length];
         
         int left = 0;

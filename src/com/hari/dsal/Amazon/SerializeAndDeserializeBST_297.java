@@ -1,9 +1,11 @@
-package com.hari.dsal.trees;
+package com.hari.dsal.Amazon;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class SerializeAndDeserializeBST {
+import com.hari.dsal.trees.TreeNode;
+
+public class SerializeAndDeserializeBST_297 {
 	// BST
 	private static final String SEP = ",";
 	private static final String NULL = "null";
@@ -72,7 +74,7 @@ public class SerializeAndDeserializeBST {
 	}
 
 	public static void main(String[] args) {
-		SerializeAndDeserializeBST sdbst = new SerializeAndDeserializeBST();
+		SerializeAndDeserializeBST_297 sdbst = new SerializeAndDeserializeBST_297();
 		String str = sdbst.serialize(sdbst.initiateTree());
 		System.out.println(str);
 		TreeNode root = sdbst.deserialize(str);
