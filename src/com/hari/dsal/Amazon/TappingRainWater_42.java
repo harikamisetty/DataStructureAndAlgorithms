@@ -1,8 +1,8 @@
-package com.hari.dsal.arrays;
+package com.hari.dsal.Amazon;
 
 import java.util.Stack;
 
-public class TappingRainWater {
+public class TappingRainWater_42 {
 	// SOLUTION with STACK
 	public int trap(int[] height) {
 		Stack<Integer> stack = new Stack<>();
@@ -37,7 +37,7 @@ public class TappingRainWater {
 		//int[] A = { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
 		int[] A = { 1, 0, 2, 0, 1};
 
-		TappingRainWater tapping = new TappingRainWater();
+		TappingRainWater_42 tapping = new TappingRainWater_42();
 		System.out.println(tapping.trap1(A));
 		System.out.println(tapping.trap(A));
 	}
