@@ -1,4 +1,4 @@
-package com.hari.dsal.leetcode;
+package com.hari.dsal.Google;
 
 import java.util.Stack;
 
@@ -6,7 +6,7 @@ import java.util.Stack;
 /*
  * Use java.util.stack to store only opening brackets
  */
-public class ValidParentheses {
+public class ValidParentheses_20 {
 	
 	public static boolean isValid(String s) { 
         Stack<Character> stack = new Stack<Character>(); 

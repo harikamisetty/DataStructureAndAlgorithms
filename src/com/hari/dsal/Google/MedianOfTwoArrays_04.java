@@ -1,6 +1,6 @@
-package com.hari.dsal.leetcode;
+package com.hari.dsal.Google;
 
-public class MedianOfTwoArrays {
+public class MedianOfTwoArrays_04 {
 
 	public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
 		int len = nums1.length + nums2.length;
