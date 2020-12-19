@@ -54,6 +54,8 @@ public class WordSearch_II {
         }
  
         visited[row][col] = true;
+        
+        // Once found move p further
         p = p.children[c - 'a'];
  
         if (!p.word.isEmpty()) {

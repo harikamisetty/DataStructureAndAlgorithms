@@ -5,7 +5,7 @@ import java.util.Stack;
 public class NextGeneraterElementII_503 {
 	public int[] nextGreaterElements(int[] nums) {
 		int n = nums.length;
-		Stack<Integer> stack = new Stack();
+		Stack<Integer> stack = new Stack<>();
 		for (int i = n - 1; i >= 0; i--) {
 			stack.push(i);
 		}
@@ -23,12 +23,12 @@ public class NextGeneraterElementII_503 {
 		}
 		return res;
 	}
-	
+
 	public static void main(String[] args) {
-		int []a = {1,2,1,3};
+		int[] a = { 1, 2, 1 };
 		NextGeneraterElementII_503 nge = new NextGeneraterElementII_503();
-		for(int val : nge.nextGreaterElements(a)) {
-			System.out.println(val);
+		for (int val : nge.nextGreaterElements(a)) {
+			System.out.print(val+",");
 		}
 	}
 }

@@ -37,7 +37,7 @@ public class PathSum_III {
 	}
 
 	public static void main(String[] args) {
-		int a[] = { 3, 4, 1, 6, -3 };
+		int a[] = { 3, 4, 3, 4, 1, 6, -3 };
 		PathSum_III p3 = new PathSum_III();
 		System.out.println(p3.subarraySum(a, 7));
 	}
@@ -72,6 +72,31 @@ public class PathSum_III {
 			}
 		}
 		return count;
+	}
+
+// Recursive
+	int count = 0;
+
+	public int pathSum_rec(TreeNode root, int sum) {
+		if (root == null)
+			return 0;
+		helper(root, sum);
+
+		pathSum(root.left, sum);
+		pathSum(root.right, sum);
+
+		return count;
+	}
+
+	public void helper(TreeNode root, int sum) {
+		if (root == null)
+			return;
+
+		if (root.val - sum == 0)
+			count++;
+
+		helper(root.left, sum - root.val);
+		helper(root.right, sum - root.val);
 	}
 }
 

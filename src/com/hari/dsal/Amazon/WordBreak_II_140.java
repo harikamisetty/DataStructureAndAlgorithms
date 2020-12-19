@@ -20,12 +20,12 @@ public class WordBreak_II_140 {
 		}
 
 		List<String> curr = new ArrayList<String>();
-		wordBreakHelper(0, s, dict, curr, result);
+		wordBreakHelper(curr, result, s, dict, 0);
 
 		return result;
 	}
 
-	private void wordBreakHelper(int start, String s, Set<String> dict, List<String> curr, List<String> result) {
+	private void wordBreakHelper(List<String> curr, List<String> result, String s, Set<String> dict, int start) {
 		if (start >= s.length()) {
 			String temp = constructString(curr);
 			result.add(temp);
@@ -34,7 +34,7 @@ public class WordBreak_II_140 {
 		for (int i = start; i < s.length(); i++) {
 			if (dict.contains(s.substring(start, i + 1))) {
 				curr.add(s.substring(start, i + 1));
-				wordBreakHelper(i + 1, s, dict, curr, result);
+				wordBreakHelper(curr, result, s, dict, i + 1);
 				curr.remove(curr.size() - 1);
 			}
 		}
@@ -92,8 +92,8 @@ public class WordBreak_II_140 {
 		for (String val : w140.wordBreak(s, wordDict)) {
 			System.out.println(val);
 		}
-		//Arrays.asList("catsanddog","cat", "cats", "and", "sand", "dog")
-		for (String val : w140.wordBreak_DFS("catcatcatcat", Arrays.asList("cat", "cat"))) {
+		// Arrays.asList("catsanddog","cat", "cats", "and", "sand", "dog")
+		for (String val : w140.wordBreak_DFS("catsanddog", Arrays.asList("cat", "cats", "and", "sand", "dog"))) {
 			System.out.println(val);
 		}
 	}

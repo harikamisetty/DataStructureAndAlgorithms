@@ -33,8 +33,10 @@ public class CourseSchedule1_207 {
 
 		for (int[] prerequisite : prerequisites) {
 			List<Integer> neighbors = adjList.get(prerequisite[0]);
+			if(neighbors != null) {
 			neighbors.add(prerequisite[1]);
 			adjList.put(prerequisite[0], neighbors);
+			}
 		}
 
 		// step 2: get all nodes with indegree 0 and put into the queuue
@@ -67,6 +69,12 @@ public class CourseSchedule1_207 {
 	}
 
 	public static void main(String[] args) {
+		
+		int numCourses = 5, prerequisites [][]= {{1,0},{2,0},{3,1},{4,3}};
+		
+		CourseSchedule1_207 cs207 = new CourseSchedule1_207();
+		System.out.println(cs207.canFinish(numCourses, prerequisites));
+		
 
 	}
 }

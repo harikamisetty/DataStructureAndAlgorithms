@@ -26,7 +26,7 @@ public class WordBreak_139 {
 	public boolean wordBreak_dp(String s, Set<String> dict) {
         if (s == null || s.isEmpty()) return true;
          
-        // dp[i] means [0,i) is breakable
+        // dp[i] means [0,i] is breakable
         boolean[] dp = new boolean[s.length() + 1];
         dp[0] = true;
          
@@ -43,7 +43,7 @@ public class WordBreak_139 {
 	
 	public static void main(String[] args) {
 		String s="leetcode";
-		Set<String> set = new HashSet<>(Arrays.asList("leet","code"));
+		Set<String> set = new HashSet<>(Arrays.asList("leet","code","leet"));
 		WordBreak_139 w139 = new WordBreak_139();
 		//System.out.println(w139.wordBreak(s, set));
 		System.out.println(w139.wordBreak_dp(s, set));
