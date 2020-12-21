@@ -2,32 +2,25 @@ package com.hari.dsal.strings;
 
 public class LowestCommonAncestor {
 	
-	private TreeNode lca(TreeNode root, int node1, int node2) {
-	    while (true) {
-	        if (root.val > node1 && root.val > node2) {
-	            root = root.left;
-	        } else if (root.val < node1 && root.val < node2) {
-	            root = root.right;
-	        } else {
-	            return root;
-	        }
-	    }
+	private TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+		if (root == null || root == p || root == q) {
+            return root;
+        }
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
+        if (left != null && right != null) {
+            return root;
+        }
+        return left != null ? left : right;
 	}
 	
 	public static void main(String[] args) {
 		LowestCommonAncestor lc = new LowestCommonAncestor();
-		System.out.println(lc.lca(lc.initiateTree(), 20, 30).val);
+		TreeNode a = new TreeNode(20);
+		TreeNode b = new TreeNode(30);
+		System.out.println(lc.lowestCommonAncestor(lc.initiateTree(),a ,b));
 	}
-	class TreeNode {
 
-		public int val;
-		public TreeNode left;
-		public TreeNode right;
-
-		public TreeNode(int x) {
-			val = x;
-		}
-	}
 	
 	private TreeNode initiateTree() {
 
@@ -43,5 +36,15 @@ public class LowestCommonAncestor {
 
 		return root;
 
+	}
+}
+class TreeNode {
+
+	public int val;
+	public TreeNode left;
+	public TreeNode right;
+
+	public TreeNode(int x) {
+		val = x;
 	}
 }
