@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Permutations_I {
+public class Permutations_42 {
 
 	private List<List<Integer>> getPermutations(int[] input){
 		List<List<Integer>> res = new ArrayList<>();
@@ -29,7 +29,7 @@ public class Permutations_I {
 			temp.remove(temp.size()-1);		}
 	}
 	public static void main(String[] args) {
-		Permutations_I cs_I = new Permutations_I();
+		Permutations_42 cs_I = new Permutations_42();
 		int[] input = {1,2,3};
 		Arrays.sort(input);
 		List<List<Integer>> res = cs_I.getPermutations(input);
