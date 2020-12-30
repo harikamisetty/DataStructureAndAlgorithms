@@ -35,25 +35,28 @@ public class BasicCalculator_II {
 					stack.push(stack.pop() / num);
 				}
 				sign = s.charAt(i); // Very Important step
-				num = 0; // Defailut it to 0 Since it's already copied 
+				num = 0; // Defailut it to 0 Since it's already copied
 			}
 		}
+		
 		int re = 0;
+		// Condition to add all items from Stack when it has only + or -
 		for (int i : stack) {
 			re += i;
 		}
+		
 		return re;
 	}
 	// Method 2
 	 public enum Operator{ADD, SUBTRACT, MULTIPLY, DIVIDE, BLANK}
 
 	    public static void main(String[] args){
-	        String expression = "2+3*5+5";
+	        String expression = "2+3+5+5";
 	        BasicCalculator_II calc = new BasicCalculator_II();
-	        System.out.println(calc.compute(expression));
+	        System.out.println(calc.calculate(expression));
 	    }
 
-	    public double compute(String sequence){
+	    public int  compute(String sequence){
 	        Stack<Double> numberStack = new Stack<Double>();
 	        Stack<Operator> operatorStack = new Stack<Operator>();
 	        for(int i = 0; i < sequence.length(); i++){
@@ -75,7 +78,7 @@ public class BasicCalculator_II {
 	        }
 	        collapseTop(numberStack, operatorStack, Operator.BLANK);
 	        if(numberStack.size() == 1 && operatorStack.size() == 0){
-	            return numberStack.pop();
+	            return numberStack.pop().intValue();
 	        }
 	        return 0;
 	    }
