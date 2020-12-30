@@ -26,6 +26,8 @@ public class CopyListwithRandomPointer_L138 {
 
 		return resHead;
 	}
+	
+	//# Solution #2
 
 	public Node copyRandomList1(Node head) {
 

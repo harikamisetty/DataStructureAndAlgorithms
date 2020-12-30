@@ -2,41 +2,51 @@ package com.hari.dsal.Amazon;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
 
 public class TopKFrequentWords_L692 {
+
 	public List<String> topKFrequent(String[] words, int k) {
-		List<String> res = new ArrayList<>();
-		if (words == null || words.length == 0)
-			return res;
-
-		LinkedHashMap<String, Integer> tempMap = new LinkedHashMap<>();
-
-		for (String s : words) {
-			if (!tempMap.containsKey(s)) {
-				tempMap.put(s, 1);
-			} else {
-				tempMap.put(s, tempMap.get(s) + 1);
-			}
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		for (String word : words) {
+			map.put(word, map.getOrDefault(word, 0) + 1);
 		}
+		PriorityQueue<PQ> pq = new PriorityQueue<PQ>(new Comparator<PQ>() {
+			@Override
+			public int compare(PQ a, PQ b) {
+				if (a.cnt != b.cnt)
+					return b.cnt - a.cnt;
+				return a.word.compareTo(b.word);
+			}
+		});
 
-		LinkedHashMap<String, Integer> lmap = new LinkedHashMap<>();
-
-		tempMap.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-				.forEachOrdered(x -> lmap.put(x.getKey(), x.getValue()));
-
-		lmap.entrySet().stream().limit(k).forEachOrdered(x -> res.add(x.getKey()));
-		return res;
+		for (String word : map.keySet())
+			pq.add(new PQ(word, map.get(word)));
+		List<String> ans = new ArrayList<String>();
+		for (int i = 0; i < k; i++)
+			ans.add(pq.poll().word);
+		return ans;
 	}
 
 	public static void main(String[] args) {
 
 		String str[] = { "i", "love", "leetcode", "i", "love", "coding" };
 		TopKFrequentWords_L692 t = new TopKFrequentWords_L692();
-		List<String> res=t.topKFrequent(str, 2);
-		
+		List<String> res = t.topKFrequent(str, 2);
+
 		System.out.println(res);
+	}
+}
+
+class PQ {
+	String word;
+	int cnt;
+
+	PQ(String word, int cnt) {
+		this.word = word;
+		this.cnt = cnt;
 	}
 }

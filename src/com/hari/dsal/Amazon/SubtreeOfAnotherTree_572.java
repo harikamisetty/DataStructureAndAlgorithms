@@ -37,15 +37,6 @@ public class SubtreeOfAnotherTree_572 {
 
 	}
 	
-	private TreeNode initiateTree2() {
-
-		TreeNode root = new TreeNode(10);
-		root.left = new TreeNode(5);
-		root.right = new TreeNode(8);
-
-		return root;
-	}
-	
     public static void main(String[] args) {
     	SubtreeOfAnotherTree_572 soa = new SubtreeOfAnotherTree_572();
     	System.out.println(soa.isSubtree(soa.initiateTree1(), soa.initiateTree1()));

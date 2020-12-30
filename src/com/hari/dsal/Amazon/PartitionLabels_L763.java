@@ -26,5 +26,6 @@ public class PartitionLabels_L763 {
 		
 		PartitionLabels_L763 p = new PartitionLabels_L763();
 		List<Integer> res = p.partitionLabels(s);
+		res.forEach(val -> System.out.println(val));
 	}
 }

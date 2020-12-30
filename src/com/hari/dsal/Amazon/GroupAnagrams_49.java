@@ -31,7 +31,7 @@ public class GroupAnagrams_49 {
 			ans.get(key).add(s);
 		}
 		
-		return new ArrayList(ans.values());
+		return new ArrayList<>(ans.values());
 	}
 
 	public static void main(String[] args) {
