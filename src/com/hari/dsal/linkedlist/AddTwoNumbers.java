@@ -82,8 +82,8 @@ public class AddTwoNumbers {
 		
 		public static void main(String[] args) {
 			
-			ListNode head = new ListNode(2);
-			ListNode node1 = new ListNode(4);
+			ListNode head = new ListNode(1);
+			ListNode node1 = new ListNode(2);
 			head.next = node1;
 
 			ListNode node2 = new ListNode(3);
@@ -91,11 +91,11 @@ public class AddTwoNumbers {
 
 			node2.next = null;
 			
-			ListNode heada = new ListNode(5);
-			ListNode nodea1 = new ListNode(6);
+			ListNode heada = new ListNode(1);
+			ListNode nodea1 = new ListNode(2);
 			heada.next = nodea1;
 
-			ListNode nodea2 = new ListNode(4);
+			ListNode nodea2 = new ListNode(3);
 			nodea1.next = nodea2;
 
 			nodea2.next = null;

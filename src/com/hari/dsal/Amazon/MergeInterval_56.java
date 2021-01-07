@@ -51,4 +51,34 @@ public class MergeInterval_56 {
 			return true;
 		return false;
 	}
+	
+	// #2 Solution
+
+	public int[][] merge1(int[][] intervals) {
+		List<int[]> ans = new ArrayList<>();
+
+		Arrays.sort(intervals, (a, b) -> (a[0] - b[0]));
+
+		for (int[] interval : intervals)
+			if (ans.isEmpty() || ans.get(ans.size() - 1)[1] < interval[0])
+				ans.add(interval);
+			else
+				ans.get(ans.size() - 1)[1] = Math.max(ans.get(ans.size() - 1)[1], interval[1]);
+
+		return ans.toArray(new int[ans.size()][]);
+	}
+	
+	
+	public static void main(String[] args) {
+		int [][] intervals = {{1,3},{2,6},{8,10},{15,18}};
+		MergeInterval_56 mi = new MergeInterval_56();
+		int [][] res = mi.merge1(intervals);
+		
+		for(int[] val : res) {
+			System.out.println("\n");
+			for (int value: val) {
+				System.out.print(value+",");
+			}
+		}
+	}
 }

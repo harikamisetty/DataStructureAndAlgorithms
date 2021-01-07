@@ -13,9 +13,19 @@ public class PlusOne_66 {
 			}
 			digits[i] = 0;
 		}
+		// When all 9's in an Array
 		int[] new_arr = new int[n + 1];
 		new_arr[0] = 1;
 		return new_arr;
 
+	}
+	
+	public static void main(String[] args) {
+		PlusOne_66 po = new PlusOne_66();
+		int[] a = {9,9,9,9};
+		
+		for(int val : po.plusOne(a)) {
+			System.out.print(val+",");
+		}
 	}
 }

@@ -5,14 +5,14 @@ import java.util.HashMap;
  * 
  * http://buttercola.blogspot.com/search?q=Delete+Node+in+a+Linked+List
  */
-public class LRUCache {
+public class LRUCache_146 {
 	private int capacity;
 	private HashMap<Integer, Node> map = new HashMap<Integer, Node>();
 	private Node head;
 	private Node tail;
 	private int len;
 
-	public LRUCache(int capacity) {
+	public LRUCache_146(int capacity) {
 		this.capacity = capacity;
 		len = 0;
 	}
