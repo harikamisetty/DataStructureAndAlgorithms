@@ -98,6 +98,22 @@ public class ListOperations {
 		small.add((long)5);
 		small.add((long)30);
 		System.out.println(small.peek());
+		
+		  // create some user objects 
+        User u1 = new User("Aaman", 25); 
+        User u2 = new User("Joyita", 22); 
+        User u3 = new User("Suvam", 28); 
+        User u4 = new User("mahafuj", 2); 
+  
+        // before sort 
+		List<User> listuser = Arrays.asList(u2, u1, u4, u3);
+		System.out.println("Before Sort:");
+		listuser.forEach(User -> System.out.println("User age " + User.getAge()));
+
+		Collections.sort(listuser, Comparator.comparingInt(User::getAge));
+		System.out.println("\nAfterSort:");
+		listuser.forEach(User -> System.out.println("User age " + User.getAge()));
+		
 	}
 }
 
@@ -108,3 +124,46 @@ class SortIgnoreCase implements Comparator<Object> {
 		return s1.toLowerCase().compareTo(s2.toLowerCase());
 	}
 }
+
+class User implements Comparable<User> { 
+    public String name; 
+    public int age; 
+  
+    public User(String name, int age) 
+    { 
+        this.name = name; 
+        this.age = age; 
+    } 
+  
+    public int compareTo(User u1) 
+    { 
+        return name.compareTo(u1.name); 
+    } 
+  
+    public String getName() 
+    { 
+        return name; 
+    } 
+  
+    public void setName(String name) 
+    { 
+        this.name = name; 
+    } 
+  
+    public int getAge() 
+    { 
+        return age; 
+    } 
+  
+    public void setAge(int age) 
+    { 
+        this.age = age; 
+    } 
+  
+    @Override
+    public String toString() 
+    { 
+        return "User [name=" + name 
+            + ", age=" + age + "]"; 
+    } 
+} 

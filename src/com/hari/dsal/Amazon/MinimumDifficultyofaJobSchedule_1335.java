@@ -1,5 +1,7 @@
 package com.hari.dsal.Amazon;
 
+import java.util.Arrays;
+
 public class MinimumDifficultyofaJobSchedule_1335 {
 	public int minDifficulty(int[] jobDifficulty, int d) {
         int n = jobDifficulty.length;
@@ -42,10 +44,43 @@ public class MinimumDifficultyofaJobSchedule_1335 {
         return dp[d-1][n-1];
     }
 	
+	// Solution #2
+	public int minDifficulty_2(int[] jobDifficulty, int d) {
+		if(d > jobDifficulty.length)
+			return -1;
+		int [][] dp = new int[d+1][jobDifficulty.length];
+		for(int [] p : dp) {
+			Arrays.fill(p, -1);			
+		}
+		
+		return dfs(jobDifficulty, d, dp, 0);
+	}
+	
+	private int dfs(int[] jobDifficulty, int d, int[][] dp, int idx) {
+		
+		if( d == 1) {
+			int max =0;
+			while(idx < jobDifficulty.length)
+				max = Math.max(max, jobDifficulty[idx++]);
+			return max;
+		}
+		
+		if(dp[d][idx] != -1)
+			return dp[d][idx];
+		int max =0;
+		int res = Integer.MAX_VALUE;
+		
+		for(int i = idx; i < jobDifficulty.length -d +1; i++) {
+			max = Math.max(max, jobDifficulty[i]);
+			res = Math.min(res, max+dfs(jobDifficulty,d-1,dp,i+1));
+		}		
+		return dp[d][idx] = res;
+	}
+
 	public static void main(String[] args) {
 		int [] jobDifficulty = {6,5,4,3,2,1}; int d = 2;
 		
 		MinimumDifficultyofaJobSchedule_1335 md = new MinimumDifficultyofaJobSchedule_1335();
-		System.out.println(md.minDifficulty(jobDifficulty, d));
+		System.out.println(md.minDifficulty_2(jobDifficulty, d));
 	}
 }

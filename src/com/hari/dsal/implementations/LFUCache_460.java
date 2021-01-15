@@ -5,14 +5,14 @@ import java.util.LinkedHashSet;
 
 
 // Least frequently Used
-public class LFUCache {
+public class LFUCache_460 {
 
 	private int cap = 0;
 	private HashMap<Integer, Integer> valueHash = null;
 	private HashMap<Integer, Node> nodeHash = null;
 	private Node head = null;
 
-	public LFUCache(int capacity) {
+	public LFUCache_460(int capacity) {
 		this.cap = capacity;
 		valueHash = new HashMap<>();
 		nodeHash = new HashMap<>();
@@ -122,5 +122,4 @@ public class LFUCache {
 			prev = next = null;
 		}
 	}
-
 }
