@@ -3,21 +3,30 @@ package com.hari.dsal.linkedlist;
 public class SwapPairs {
 	public ListNode swappairNodes(ListNode head) {
 		
-		if(head == null) return null;
-		if(head.next == null) return head;
-		
-		ListNode newHead = head.next;
-		
-		while(head != null && head.next != null) {
-			ListNode first = head;
-			ListNode second = head.next;
-			
-			head = second.next;
-			first.next = second.next;
-			second.next = first;					
-		}
-		return newHead;
-	}
+		 final int length = getLength(head);
+		    ListNode dummy = new ListNode(0);
+		    dummy.next = head;
+		    ListNode prev = dummy;
+		    ListNode curr = head;
+
+		    for (int i = 0; i < length / 2; ++i) {
+		      ListNode next = curr.next;
+		      curr.next = next.next;
+		      next.next = curr;
+		      prev.next = next;
+		      prev = curr;
+		      curr = curr.next;
+		    }
+
+		    return dummy.next;
+		  }
+
+		  private int getLength(ListNode head) {
+		    int length = 0;
+		    for (ListNode curr = head; curr != null; curr = curr.next)
+		      ++length;
+		    return length;
+		  }
 	
 	public static void main(String[] args) {
 		ListNode head = new ListNode(2);

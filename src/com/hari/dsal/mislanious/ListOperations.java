@@ -114,6 +114,9 @@ public class ListOperations {
 		System.out.println("\nAfterSort:");
 		listuser.forEach(User -> System.out.println("User age " + User.getAge()));
 		
+		int[] nums1 = {2,4,6,1};
+		//Array to List
+		List<Integer> myList = Arrays.stream(nums1 ).boxed().collect(Collectors.toList());
 	}
 }
 

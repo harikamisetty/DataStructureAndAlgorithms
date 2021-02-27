@@ -85,10 +85,10 @@ public class BestTimeToBuySellStock {
 		int stocks[] = new int[6];
 		stocks[0] = 10;
 		stocks[1] = 20;
-		stocks[2] = 30;
-		stocks[3] = 15;
+		stocks[2] = 50;
+		stocks[3] = 5;
 		stocks[4] = 25;
-		stocks[5] = 50;
+		stocks[5] = 20;
 		System.out.println(maxProfit(stocks));
 		System.out.println(maxProfit1(stocks));
 		System.out.println(maxProfit2(stocks));

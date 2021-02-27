@@ -65,6 +65,6 @@ public class IntegerToEnglishWord {
 	
 	public static void main(String[] args) {
 		IntegerToEnglishWord ite = new IntegerToEnglishWord();
-		System.out.println(ite.intToEnglish(43));
+		System.out.println(ite.intToEnglish(1000));
 	}
 }

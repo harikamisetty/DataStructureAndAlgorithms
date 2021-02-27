@@ -179,16 +179,3 @@ public class GameofLife {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

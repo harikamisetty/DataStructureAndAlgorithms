@@ -1,6 +1,6 @@
 package com.hari.dsal.arrays;
 
-public class MaxAndMinSubArray {
+public class MaxAndMinSubArray_53 {
 	private int maxArraySum(int[] nums) {
 		int sum = 0, max = 0;
 
@@ -30,8 +30,8 @@ public class MaxAndMinSubArray {
 	}
 
 	public static void main(String[] args) {
-		int nums[] = { -2, 3, -4, 5, 6, -7 };
-		MaxAndMinSubArray maxAMin = new MaxAndMinSubArray();
+		int nums[] = { -2, 1, -3, 4, -1, 2, 1, -5, 4  };
+		MaxAndMinSubArray_53 maxAMin = new MaxAndMinSubArray_53();
 		System.out.println(maxAMin.maxArraySum(nums));
 		System.out.println(maxAMin.minArraySum(nums));
 	}

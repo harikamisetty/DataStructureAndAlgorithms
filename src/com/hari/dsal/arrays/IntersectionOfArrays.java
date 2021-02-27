@@ -18,5 +18,12 @@ public class IntersectionOfArrays {
 		}
 		return res.stream().mapToInt(Integer::intValue).toArray();
 	}
-
+	
+	public static void main(String[] args) {
+		int a[] = {2,3,4,1}, b[] = {3,4,5,6};
+		IntersectionOfArrays ia = new IntersectionOfArrays();
+		for(int val : ia.intersection(a, b)) {
+			System.out.println(val);
+		}
+	}
 }

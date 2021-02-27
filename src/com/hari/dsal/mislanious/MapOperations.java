@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.TreeMap;
 
 public class MapOperations {
@@ -62,5 +63,9 @@ public class MapOperations {
 		
 		// GET First Value
 		System.out.println(unSortedMap.values().toArray()[0]);
+		
+		for(Entry<String, Integer> entry: limitmap.entrySet()) {
+			
+		}
 	}
 }

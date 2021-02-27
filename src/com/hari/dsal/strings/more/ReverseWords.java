@@ -27,6 +27,32 @@ public class ReverseWords {
 			} 
 			return result; 
 		} 
+		
+		 public String solve(String sentence) {
+
+		        if(sentence == null)
+		            return null;
+
+		        String[] sarr = sentence.split("\\s+");
+
+		        int i =0, j=sarr.length -1;
+
+		        while(i<j){
+		            String temp = sarr[i];
+		            sarr[i] = sarr[j];
+		            sarr[j] = temp;
+		            i++;j--;
+		        }
+		        return convertObjectArrayToString(sarr," ");
+		    }
+		 
+		 private String convertObjectArrayToString(Object[] arr, String delimiter) {
+				StringBuilder sb = new StringBuilder();
+				for (Object obj : arr)
+					sb.append(obj.toString()).append(delimiter);
+				return sb.substring(0, sb.length() - 1);
+
+			}
 
 		// Driver methods to test above method 
 		public static void main(String[] args) 
@@ -36,6 +62,9 @@ public class ReverseWords {
 
 			String s2 = "I love Java Programming"; 
 			System.out.println(reverseWords(s2)); 
+			
+			ReverseWords rw = new ReverseWords();
+			System.out.println(rw.solve(s2));
 		} 
 
 

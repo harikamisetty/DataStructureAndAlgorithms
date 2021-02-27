@@ -2,7 +2,7 @@ package com.hari.dsal.matrix;
 
 public class WordSearch {
 	
-	public boolean exist(char[][] board, String word) {
+	public boolean exist(String[][] board, String word) {
         if (board == null || word == null) {
             return true;
         }
@@ -25,7 +25,7 @@ public class WordSearch {
         return false;
     }
      
-    private boolean existHelper(char[][] board, String word, int start, int row, int col, boolean[][] visited) {
+    private boolean existHelper(String[][] board, String word, int start, int row, int col, boolean[][] visited) {
         if (start == word.length()) {
             return true;
         }
@@ -38,7 +38,7 @@ public class WordSearch {
             return false;
         }
          
-        if (board[row][col] != word.charAt(start)) {
+        if (board[row][col].charAt(0) != word.charAt(start)) {
             return false;
         }
          
@@ -51,5 +51,15 @@ public class WordSearch {
          
         return result;
     }
+    
+    public static void main(String[] args) {
+    	String [][]board = {
+    			{"H", "E", "L", "L", "O"},
+    	         {"A", "B", "C", "D", "E"}
+    	};
+   	
+    	    WordSearch ws = new WordSearch();
+    	    System.out.println(ws.exist(board, "EDL"));
+	}
 
 }

@@ -14,7 +14,7 @@ public class RotateImage {
              
             for (int i = first; i < last; i++) {
                 int offset = i - first; //0
-                int top = matrix[first][i];//0,0
+                int top = matrix[first][i];//0,0 temp
                  
                 // left -> top
                 matrix[first][i] = matrix[last - offset][first];

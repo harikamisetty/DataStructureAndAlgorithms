@@ -26,7 +26,7 @@ public class POW_50 {
 	 
 	 public static void main(String[] args) {
 		POW_50 pw = new POW_50();
-		System.out.println(pw.myPow(2.0000, -2147483648));
+		System.out.println(pw.myPow(2.0000, -2));
 		
 	}
 

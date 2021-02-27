@@ -46,7 +46,7 @@ public class NextPermutation {
 	}
 	
 	public static void main(String[] args) {
-		int nums[] = {2,1,3};
+		int nums[] = {5,2,5,6,4};
 		NextPermutation np = new NextPermutation();
 		
 		np.nextPermutation(nums);

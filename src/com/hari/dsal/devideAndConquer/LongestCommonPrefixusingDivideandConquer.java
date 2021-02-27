@@ -1,5 +1,7 @@
 package com.hari.dsal.devideAndConquer;
 
+import java.util.Arrays;
+
 //Java Program to find the longest common prefix 
 
 class LongestCommonPrefixusingDivideandConquer { 
@@ -40,14 +42,28 @@ class LongestCommonPrefixusingDivideandConquer {
 		} 
 		return null; 
 	} 
+	
+	 public static String solve(String[] words) {
+
+	        Arrays.sort(words);
+
+	      
+	            StringBuffer sb = new StringBuffer();
+	        for(int i=0;i<words[0].length();i++){
+	            if(words[0].charAt(i)!= words[words.length-1].charAt(i))
+	               break;
+	             else 
+	                sb.append(words[0].charAt(i));  
+	        }
+	         return sb.toString();
+	    }
 
 //Driver program to test above function 
 	public static void main(String[] args) { 
-		String arr[] = {"geeksforgeeks", "geeks", 
-			"geek", "geezer"}; 
+		String arr[] = {"cant", "ant"}; 
 		int n = arr.length; 
 
-		String ans = commonPrefix(arr, 0, n - 1); 
+		String ans = solve(arr); 
 
 		if (ans.length() != 0) { 
 			System.out.println("The longest common prefix is "

@@ -7,11 +7,19 @@ public class DiameterOfBinaryTree {
 	}
 
 	private int diameterOfBinaryTree(TreeNode root) {
-		if (root == null)
+		depth(root);
+		return ans;
+	}
+
+	private int ans = 0;
+
+	private int depth(TreeNode node) {
+		if (node == null)
 			return 0;
-		int ldepth = diameterOfBinaryTree(root.left);
-		int rdepth = diameterOfBinaryTree(root.right);
-		return ldepth + rdepth + 1;
+		int L = depth(node.left);
+		int R = depth(node.right);
+		ans = Math.max(ans, L + R + 1);
+		return Math.max(L, R) + 1;
 	}
 
 	private TreeNode initiateTree() {

@@ -15,8 +15,10 @@ public class SubarraySum {
 			int windowsum = 0;
 			for (int j = i; j < len; j++) {
 				windowsum = windowsum + nums[j];
-				if (windowsum == k)
+				if (windowsum == k) {
 					count++;
+					break;
+				}
 			}
 		}
 		return count;

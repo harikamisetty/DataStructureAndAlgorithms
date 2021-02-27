@@ -43,7 +43,9 @@ public class MergeTwoArrays {
 		}
 		while (i < a.length) {
 			if (a[i] == 0) {
-				System.out.println("Zero");i++;k++;
+				System.out.println("Zero");
+				i++;
+				k++;
 			} else {
 				c[k] = a[i];
 				i++;
@@ -53,18 +55,19 @@ public class MergeTwoArrays {
 
 		while (j < b.length) {
 			if (b[j] == 0) {
-				j++;k++;
+				j++;
+				k++;
 			} else {
 				c[k] = b[j];
 				j++;
 				k++;
 			}
 		}
-		
+
 		for (int val : c) {
 			System.out.print(val);
 		}
-		
+
 		return c;
 	}
 
@@ -76,11 +79,41 @@ public class MergeTwoArrays {
 
 	}
 
-	public static void main(String[] args) {
-		int a[] = { 0, 0, 1, 1, 2, 4 };
-		int b[] = { 2, 3, 6, 7, 8, 9 };
+	public static int[] solve1(int[] a, int[] b) {
+		int m = 0;
+		int n = 0, i = 0;
+		int[] res = new int[a.length + b.length];
 
-		int res[] = merge(a, b);
+		while (m < a.length && n < b.length) {
+			if (a[m] < b[n]) {
+				res[i++] = a[m++];
+			}else
+			if (b[n] < a[m]) {
+				res[i++] = b[n++];
+			} else {
+				res[i++] = a[m++];
+				res[i++] = b[n++];
+			}
+		}
+
+		if (m < a.length) {
+			while (m < a.length)
+				res[i++] = a[m++];
+		}
+
+		if (n < b.length) {
+			while (n < b.length)
+				res[i++] = b[n++];
+		}
+
+		return res;
+	}
+
+	public static void main(String[] args) {
+		int a[] = { 0};
+		int b[] = { 1,1};
+
+		int res[] = solve1(a, b);
 		Arrays.sort(res);
 
 		for (int val : res) {

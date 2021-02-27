@@ -1,9 +1,11 @@
 package com.hari.dsal.Amazon;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedList;
 
 public class PrisonAfterNDays_957 {
-	
+
 	protected int cellsToBitmap(int[] cells) {
 		int stateBitmap = 0x0;
 		for (int cell : cells) {
@@ -47,13 +49,48 @@ public class PrisonAfterNDays_957 {
 		}
 		return cells;
 	}
-	
+
+	// #2 Soluton
+	public int[] prisonAfterNDays_2(int[] cells, int N) {
+		LinkedList<int[]> list = new LinkedList<>();
+		int[] currentDay = getNextDay(cells);
+		N--;
+
+		while (N > 0) {
+			if (!list.isEmpty() && Arrays.equals(list.getFirst(), currentDay)) {
+				N = N % list.size();
+				if (N == 0)
+					break;
+			}
+			list.add(currentDay);
+			currentDay = getNextDay(currentDay);
+			N--;
+		}
+
+		return currentDay;
+	}
+
+	private int[] getNextDay(int[] currentDay) {
+		int[] nextDay = new int[currentDay.length];
+
+		for (int i = 0; i < currentDay.length; i++) {
+			if (i == 0 || i == currentDay.length - 1)
+				nextDay[i] = 0;
+			else if (currentDay[i + 1] == currentDay[i - 1])
+				nextDay[i] = 1;
+			else
+				nextDay[i] = 0;
+		}
+
+		return nextDay;
+	}
+
 	public static void main(String[] args) {
 		PrisonAfterNDays_957 pan = new PrisonAfterNDays_957();
-		int[] cells = {0,1,0,1,1,0,0,1};
-		int[] res = pan.prisonAfterNDays(cells , 7);
-		for(int val : res) {
-			System.out.print(val +",");
+		int[] cells = { 0, 1, 0, 1, 1, 0, 0, 1 };
+		int[] res = pan.prisonAfterNDays_2(cells, 7);
+		for (int val : res) {
+			System.out.print(val + ",");
 		}
 	}
 }
