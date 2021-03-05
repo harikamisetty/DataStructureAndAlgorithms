@@ -1,6 +1,6 @@
 package com.hari.dsal.linkedlist;
 
-public class RemoveDuplicates {
+public class RemoveDuplicates_82 {
 
 	private ListNode removeDuplicate(ListNode head) {
 		ListNode fakeHead = new ListNode(0);
@@ -33,7 +33,7 @@ public class RemoveDuplicates {
 
 		node2.next = null;
 
-		RemoveDuplicates rll = new RemoveDuplicates();
+		RemoveDuplicates_82 rll = new RemoveDuplicates_82();
 		ListNode resNode = rll.removeDuplicate(head);
 		
 		while(resNode != null) {

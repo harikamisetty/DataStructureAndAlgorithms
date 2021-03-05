@@ -116,7 +116,7 @@ public class ListOperations {
 		
 		int[] nums1 = {2,4,6,1};
 		//Array to List
-		List<Integer> myList = Arrays.stream(nums1 ).boxed().collect(Collectors.toList());
+		List<Integer> myList = Arrays.stream(nums1).boxed().collect(Collectors.toList());
 	}
 }
 

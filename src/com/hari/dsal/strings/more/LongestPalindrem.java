@@ -35,7 +35,24 @@ public class LongestPalindrem {
         // Space Complexity: O(n ^ 2)
     }
 	
+	public static int solve(String s) {
+        int max =0;
+        for(int i=0;i<s.length();i++){
+            for(int j=i+1;j<s.length();j++){
+                StringBuilder str = new StringBuilder(s.substring(i,j));
+                String temp = new String(str);
+
+                if(str.reverse().toString().equalsIgnoreCase(temp)) {
+                	 max = Math.max(max,j-i);
+                }
+                   
+            }
+        }
+
+    return max;
+    }
+	
 	public static void main(String[] args) {
-		System.out.println(longestPalindrome("babadhellolleh"));
+		System.out.println(solve("aaaaaa"));
 	}
 }

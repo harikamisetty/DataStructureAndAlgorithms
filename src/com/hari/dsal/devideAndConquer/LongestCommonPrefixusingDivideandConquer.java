@@ -43,11 +43,12 @@ class LongestCommonPrefixusingDivideandConquer {
 		return null; 
 	} 
 	
-	 public static String solve(String[] words) {
+	 public String solve(String[] words) {
 
 	        Arrays.sort(words);
 
-	      
+	        if(words[words.length-1].contains(words[0]))
+	            return words[0];
 	            StringBuffer sb = new StringBuffer();
 	        for(int i=0;i<words[0].length();i++){
 	            if(words[0].charAt(i)!= words[words.length-1].charAt(i))
@@ -60,10 +61,11 @@ class LongestCommonPrefixusingDivideandConquer {
 
 //Driver program to test above function 
 	public static void main(String[] args) { 
-		String arr[] = {"cant", "ant"}; 
+		String arr[] = {"geeksforgeeks", "geeks", 
+			"geek", "geezer"}; 
 		int n = arr.length; 
 
-		String ans = solve(arr); 
+		String ans = commonPrefix(arr, 0, n - 1); 
 
 		if (ans.length() != 0) { 
 			System.out.println("The longest common prefix is "
