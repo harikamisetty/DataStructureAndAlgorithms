@@ -87,8 +87,7 @@ public class MergeTwoArrays {
 		while (m < a.length && n < b.length) {
 			if (a[m] < b[n]) {
 				res[i++] = a[m++];
-			}else
-			if (b[n] < a[m]) {
+			} else if (b[n] < a[m]) {
 				res[i++] = b[n++];
 			} else {
 				res[i++] = a[m++];
@@ -109,9 +108,31 @@ public class MergeTwoArrays {
 		return res;
 	}
 
+	// BEST SOLUTION
+	public int[] solve(int[] lst0, int[] lst1) {
+		int i = 0;
+		int j = 0;
+		int[] retArr = new int[lst0.length + lst1.length];
+		
+		while (i < lst0.length || j < lst1.length) {
+			
+			if (i == lst0.length) {
+				retArr[i + j] = lst1[j++];
+			} else if (j == lst1.length) {
+				retArr[i + j] = lst0[i++];
+			} else if (lst0[i] > lst1[j]) {
+				retArr[i + j] = lst1[j++];
+			} else {
+				retArr[i + j] = lst0[i++];
+			}			
+		}
+		
+		return retArr;
+	}
+
 	public static void main(String[] args) {
-		int a[] = { 0};
-		int b[] = { 1,1};
+		int a[] = { 0 };
+		int b[] = { 1, 1 };
 
 		int res[] = solve1(a, b);
 		Arrays.sort(res);

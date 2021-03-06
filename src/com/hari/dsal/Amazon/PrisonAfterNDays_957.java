@@ -87,8 +87,8 @@ public class PrisonAfterNDays_957 {
 
 	public static void main(String[] args) {
 		PrisonAfterNDays_957 pan = new PrisonAfterNDays_957();
-		int[] cells = { 0, 1, 0, 1, 1, 0, 0, 1 };
-		int[] res = pan.prisonAfterNDays_2(cells, 7);
+		int[] cells = { 1, 0, 1, 0, 0, 0, 1, 0 };
+		int[] res = pan.prisonAfterNDays_2(cells, 2);
 		for (int val : res) {
 			System.out.print(val + ",");
 		}

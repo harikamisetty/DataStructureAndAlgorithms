@@ -6,9 +6,10 @@ public class RomanToInteger {
 
 	public static void main(String[] args) {
 		RomanToInteger rtoi = new RomanToInteger();
-		System.out.println(rtoi.romanToInteger("MMXIV"));
+		System.out.println(rtoi.romanToInt("IVIV"));
 	}
-
+	
+	// BEST Solution
 	public int romanToInt(String s) {
 		if (s == null || s.length() == 0)
 			return 0;
@@ -34,7 +35,7 @@ public class RomanToInteger {
 		}
 		return num;
 	}
-
+	// WRONG SOLUTION FOR IVIV
 	public int romanToInteger(String str) {
 
 		int sum = 0;

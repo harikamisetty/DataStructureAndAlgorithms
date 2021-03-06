@@ -4,12 +4,12 @@ import java.util.PriorityQueue;
 
 public class MergeKSortedArrays {
 	private class HeapNode {
-		public int arrayNum;
+		public int rowNum;
 		public int index;
 		public int value;
 
-		public HeapNode(int arrayNum, int index, int value) {
-			this.arrayNum = arrayNum;
+		public HeapNode(int rowNum, int index, int value) {
+			this.rowNum = rowNum;
 			this.index = index;
 			this.value = value;
 		}
@@ -31,6 +31,7 @@ public class MergeKSortedArrays {
 
 		// add first elements in the array to this heap
 		for (int i = 0; i < arrays.length; i++) {
+		if(arrays[i].length != 0)
 			minHeap.add(new HeapNode(i, 0, arrays[i][0]));
 		}
 
@@ -41,9 +42,9 @@ public class MergeKSortedArrays {
 
 			if (node != null) {
 				result[i] = node.value;
-				if (node.index + 1 < arrays[node.arrayNum].length) {
+				if (node.index + 1 < arrays[node.rowNum].length) {
 					// Complexity of O(log k)
-					minHeap.add(new HeapNode(node.arrayNum, node.index + 1, arrays[node.arrayNum][node.index + 1]));
+					minHeap.add(new HeapNode(node.rowNum, node.index + 1, arrays[node.rowNum][node.index + 1]));
 				}
 			}
 		}
@@ -51,10 +52,21 @@ public class MergeKSortedArrays {
 	}
 	
 	public static void main(String[] args) {
-		int[] arr1 = { 1, 3, 5, 7 };
+		/*int[] arr1 = { 1, 3, 5, 7 };
 		int[] arr2 = { 2, 4, 6, 8 };
 		int[] arr3 = { 0, 9, 10, 11,12 };
-		int[][] matrix = new int[][] { arr1, arr2, arr3 };
+		int[][] matrix = new int[][] { arr1, arr2, arr3 };*/
+		
+		int[][] matrix = {
+		         {},
+		         {},
+		         {10, 12},
+		         {},
+		         {3, 3, 13},
+		         {3},
+		         {10},
+		         {0, 7}
+		};
 		
 		MergeKSortedArrays mksa = new MergeKSortedArrays();
 		for(int val : mksa.mergeKSortedArrays(matrix)) {
