@@ -55,10 +55,39 @@ public class ConcatenatedWords_472 {
 		return dp[word.length()];
 	}
 
+	// SOLUTION #2
+
+	Set<String> set = new HashSet<>();
+
+	public int solve(String[] words) {
+		for (String word : words)
+			set.add(word);
+		int ans = 0;
+		for (String word : words)
+			ans += count(word, 0) ? 1 : 0;
+		return ans;
+	}
+
+	public boolean count(String s, int dist) {
+		int n = s.length();
+		if (n == 0)
+			if (dist == 1)
+				return false;
+			else
+				return true;
+		for (int i = 0; i <= n - 1; i++) {
+			String prefix = s.substring(0, i + 1);
+			if (set.contains(prefix))
+				if (count(s.substring(i + 1), dist + 1))
+					return true;
+		}
+		return false;
+	}
+
 	public static void main(String[] args) {
-		String[] words = { "cat", "cats", "catsdogcats", "dog", "dogcatsdog", "hippopotamuses", "rat", "ratcatdogcat" };
+		String[] words = { "news", "paper", "newspaper" };
 		ConcatenatedWords_472 cw = new ConcatenatedWords_472();
-		
+
 		for (String str : cw.findAllConcatenatedWordsInADict(words)) {
 			System.out.println(str + ",");
 		}

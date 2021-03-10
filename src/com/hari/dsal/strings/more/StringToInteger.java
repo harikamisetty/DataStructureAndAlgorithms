@@ -5,7 +5,7 @@ public class StringToInteger {
 	public static void main(String[] args) {
 		System.out.println(stringToInteger("12"));
 		System.out.println(reverseStringToInteger("236"));
-
+		
 		StringToInteger sti = new StringToInteger();
 		System.out.println(sti.stringToIntegerValue(" "));
 	}
