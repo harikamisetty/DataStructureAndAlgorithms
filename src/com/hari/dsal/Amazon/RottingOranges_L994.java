@@ -8,7 +8,7 @@ import javafx.util.Pair;
 public class RottingOranges_L994 {
 
 	public int orangesRotting(int[][] grid) {
-		Queue<Pair<Integer, Integer>> queue = new ArrayDeque();
+		Queue<Pair<Integer,Integer>> queue = new ArrayDeque<>();
 
 		// Step 1). build the initial set of rotten oranges
 		int freshOranges = 0;
@@ -17,19 +17,19 @@ public class RottingOranges_L994 {
 		for (int r = 0; r < ROWS; ++r)
 			for (int c = 0; c < COLS; ++c)
 				if (grid[r][c] == 2)
-					queue.offer(new Pair(r, c));
+					queue.offer(new Pair<>(r, c));
 				else if (grid[r][c] == 1)
 					freshOranges++;
 
 		// Mark the round / level, _i.e_ the ticker of timestamp
-		queue.offer(new Pair(-1, -1));
+		queue.offer(new Pair<>(-1, -1));
 
 		// Step 2). start the rotting process via BFS
 		int minutesElapsed = -1;
 		int[][] directions = { { -1, 0 }, { 0, 1 }, { 1, 0 }, { 0, -1 } };
 
 		while (!queue.isEmpty()) {
-			Pair<Integer, Integer> p = queue.poll();
+			Pair<Integer,Integer> p = queue.poll();
 			int row = p.getKey();
 			int col = p.getValue();
 			if (row == -1) {
@@ -37,7 +37,7 @@ public class RottingOranges_L994 {
 				minutesElapsed++;
 				// to avoid the endless loop
 				if (!queue.isEmpty())
-					queue.offer(new Pair(-1, -1));
+					queue.offer(new Pair<>(-1, -1));
 			} else {
 				// this is a rotten orange
 				// then it would contaminate its neighbors
@@ -50,7 +50,7 @@ public class RottingOranges_L994 {
 							grid[neighborRow][neighborCol] = 2;
 							freshOranges--;
 							// this orange would then contaminate other oranges
-							queue.offer(new Pair(neighborRow, neighborCol));
+							queue.offer(new Pair<>(neighborRow, neighborCol));
 						}
 					}
 				}
@@ -60,10 +60,11 @@ public class RottingOranges_L994 {
 		// return elapsed minutes if no fresh orange left
 		return freshOranges == 0 ? minutesElapsed : -1;
 	}
-	
+
+
 	public static void main(String[] args) {
 		RottingOranges_L994 ro = new RottingOranges_L994();
-		int[][] grid = {{2,1,1},{0,1,1},{1,0,1}};
+		int[][] grid = { { 2, 1, 1 }, { 0, 1, 1 }, { 1, 0, 1 } };
 		System.out.println(ro.orangesRotting(grid));
 	}
 }

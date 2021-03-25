@@ -1,6 +1,6 @@
 package com.hari.dsal.trees;
 
-public class KthSmallestElement {
+public class KthSmallestElement_230 {
 	
 	private int kthsamallelement(TreeNode root, int k) {
 		int count = countNodes(root.left);
@@ -8,7 +8,7 @@ public class KthSmallestElement {
 		if(k <= count) {
 			return kthsamallelement(root.left, k);
 		} else if(k > count + 1) {
-			return kthsamallelement(root.right, k - 1 - count);
+			return kthsamallelement(root.right, k - 1 - count); //delete root and left node
 		}
 		return root.val;		
 	}
@@ -36,7 +36,7 @@ public class KthSmallestElement {
 	}
 
 	public static void main(String[] args) {
-		KthSmallestElement vbst = new KthSmallestElement();
+		KthSmallestElement_230 vbst = new KthSmallestElement_230();
 		System.out.println(vbst.kthsamallelement(vbst.initiateTree(),2));
 	}
 }

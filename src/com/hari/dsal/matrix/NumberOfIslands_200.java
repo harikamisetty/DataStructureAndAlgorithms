@@ -3,7 +3,7 @@ package com.hari.dsal.matrix;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class NumberOfIslands {
+public class NumberOfIslands_200 {
 	
 	//DFS
 	public static int numIslands(char[][] grid) {
@@ -104,11 +104,11 @@ public class NumberOfIslands {
 
 		/*char[][] grid = { { '1', '1', '1', '1', '0' }, 
 						  { '1', '1', '0', '1', '0' }, 
-						  { '1', '1', '0', '0', '0' },
+						  { '0', '0', '0', '0', '0' },
 						  { '0', '0', '0', '0', '0' } };*/
 		
-		char[][] grid = { { '1', '0' }, 
-				  		  { '0', '0' } 
+		char[][] grid = { { '1', '0' ,'1'}, 
+				  		  { '0', '0' ,'0'} 
 				  		 };
 
 		System.out.println(numIslands(grid));

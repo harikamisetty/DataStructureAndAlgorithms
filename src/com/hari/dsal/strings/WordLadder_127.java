@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 
-public class WordLadder {
+public class WordLadder_127 {
 
 	public int ladderLength(String start, String end, Set<String> dict) {
 		if (start == null || start.isEmpty() || end == null || end.isEmpty() || dict.size()==0)
@@ -100,7 +100,7 @@ public class WordLadder {
 		dict.add("ait");
 		dict.add("cog");
 		
-		WordLadder wl = new WordLadder();
+		WordLadder_127 wl = new WordLadder_127();
 		System.out.println(wl.ladderLength1(start, end, dict));
 	}
 

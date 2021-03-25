@@ -53,7 +53,7 @@ public class ReorganizeString_767 {
 		return ans.toString();
 	}
 	public static void main(String[] args) {
-		String s= "aab";
+		String s= "aabc";
 		ReorganizeString_767 rs = new ReorganizeString_767();
 		System.out.println(rs.reorganizeString(s));
 	}

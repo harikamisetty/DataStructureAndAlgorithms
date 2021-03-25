@@ -54,7 +54,7 @@ public class RemoveInvalidParentheses_301 {
 		String Input = "(((a)())()";
 
 		RemoveInvalidParentheses_301 rip = new RemoveInvalidParentheses_301();
-		for (String res : rip.removeInvalidParentheses(Input)) {
+		for (String res : rip.removeInvalidParentheses_2(Input)) {
 			System.out.println(res);
 		}
 	}
@@ -101,5 +101,52 @@ public class RemoveInvalidParentheses_301 {
 		} else {
 			res.add(pars[0] == '(' ? s : new StringBuilder(s).reverse().toString());
 		}
+	}
+
+	public List<String> removeInvalidParentheses_2(String s) {
+
+		int l = 0, r = 0;
+
+		for (char ch : s.toCharArray()) {
+			if (ch == '(') {
+				l++;
+			} else if (ch == ')') {
+				if (l > 0) {
+					l--;
+				} else {
+					r++;
+				}
+			}
+		}
+
+		Set<String> ans = new HashSet<>();
+		removeHelper(ans, new StringBuilder(), s, 0, 0, l, r);
+		List<String> rtn = new ArrayList<>();
+		rtn.addAll(ans);
+		return rtn;
+	}
+
+	private void removeHelper(Set<String> ans, StringBuilder prefix, String s, int index, int open, int l, int r) {
+
+		if (l < 0 || r < 0 || open < 0)
+			return;
+
+		if (index == s.length() && l + r == 0) {
+			ans.add(prefix.toString());
+			return;
+		}
+
+		char ch = s.charAt(index);
+		if (ch == '(') {
+			removeHelper(ans, prefix, s, index + 1, open, l - 1, r);
+			removeHelper(ans, prefix.append(ch), s, index + 1, open + 1, l, r);
+		} else if (ch == ')') {
+			removeHelper(ans, prefix, s, index + 1, open, l, r - 1);
+			removeHelper(ans, prefix.append(ch), s, index + 1, open - 1, l, r);
+		} else {
+			removeHelper(ans, prefix.append(ch), s, index + 1, open, l, r);
+		}
+		prefix.setLength(prefix.length() - 1);
+
 	}
 }

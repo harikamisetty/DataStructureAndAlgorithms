@@ -46,4 +46,31 @@ public class Intersection {
 		return len;
 	}
 
+	// #2 SOLUTION
+	public ListNode getIntersectionNode_2(ListNode headA, ListNode headB) {
+		while (headA != null) {
+			ListNode pB = headB;
+			while (pB != null) {
+				if (headA == pB)
+					return headA;
+				pB = pB.next;
+			}
+			headA = headA.next;
+		}
+		return null;
+	}
+	
+	// #3 Solution
+	 public ListNode getIntersectionNode_3(ListNode headA, ListNode headB) {
+		    ListNode a = headA;
+		    ListNode b = headB;
+
+		    while (a != b) {
+		      a = a == null ? headB : a.next;
+		      b = b == null ? headA : b.next;
+		    }
+
+		    return a;   
+		 }
+
 }

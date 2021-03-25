@@ -82,8 +82,8 @@ public class ReorderDataInLogFiles_L937 {
 		for (String st : str) {
 			System.out.println(st);
 		}
-		//String []logs = {"dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"};
-		String []logs = {"let1 art can","let2 art can","let3 art zero"};
+		String []logs = {"dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"};
+		//String []logs = {"let1 art can","let2 art can","let3 art zero"};
 		
 		ReorderDataInLogFiles_L937 rd = new ReorderDataInLogFiles_L937();
 		String []strs = rd.reOrderLogs(logs);

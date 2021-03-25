@@ -105,6 +105,6 @@ public class MinimumDifficultyofaJobSchedule_1335 {
 		int [] jobDifficulty = {6,5,4,3,2,1}; int d = 2;
 		
 		MinimumDifficultyofaJobSchedule_1335 md = new MinimumDifficultyofaJobSchedule_1335();
-		System.out.println(md.minDifficulty_3(jobDifficulty, d));
+		System.out.println(md.minDifficulty_2(jobDifficulty, d));
 	}
 }

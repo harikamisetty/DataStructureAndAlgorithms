@@ -19,6 +19,7 @@ public class DesignFileSystem_LC588 {
 		File node = root;
 		List<String> result = new ArrayList<>();
 		String name = "";
+		
 		for (String dir : dirs) {
 			if (dir.length() == 0)
 				continue;

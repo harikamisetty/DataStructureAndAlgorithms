@@ -34,9 +34,9 @@ public class CountingBits {
 	public static void main(String[] args) {
 		int [] results = new int[7];
 		
-		results = countBits(7);
+		results = countBits1(7);
 		for (int i=1; i<= 7; i++) {
-			System.out.println(results[i]);
+			System.out.print(results[i]+",");
 		}
 		
 	}

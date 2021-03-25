@@ -4,9 +4,9 @@ public class BitExample {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(getLeftBit(16, 2));
+	/*	System.out.println(getLeftBit(16, 2));
 		System.out.println(getLogicalLeftBit(16,2));
-		System.out.println(getBit(16,2));
+		System.out.println(getBit(16,2));*/
 		System.out.println(12 & 20);
 		System.out.println(12 & -20);
 		System.out.println(-12 & -20);
