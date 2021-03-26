@@ -22,7 +22,7 @@ public class CombinationSum {
 		else {
 			for(int i = start; i < nums.length; i++) {
 				tempList.add(nums[i]);
-				backtrack(list, tempList, nums, remain - nums[i], i+1); // not i+1 because we can reuse same element.
+				backtrack(list, tempList, nums, remain - nums[i], i); // Use i instead of i+1 we can reuse same element.
 				tempList.remove(tempList.size() - 1); // Remove last element since it make list more than target
 			}
 		}
@@ -30,7 +30,7 @@ public class CombinationSum {
 	
 	
 	public static void main(String[] args) {
-		int A[] = {2,3,6,7,4};
+		int A[] = {2,3,5};
 		
 		CombinationSum cm = new CombinationSum();
 		List<List<Integer>> results = cm.getCombinations(A, 9);

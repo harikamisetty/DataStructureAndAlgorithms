@@ -1,6 +1,6 @@
 package com.hari.dsal.arrays;
 
-public class IntegerToEnglishWord {
+public class IntegerToEnglishWord_273 {
 
 	public String intToEnglish(int num) {
 		if (num == 0) {
@@ -25,7 +25,9 @@ public class IntegerToEnglishWord {
 				sb.insert(0, numToWordsHelper(curr, dict1, dict2));
 			}
 			num /= 1000;
-			if(num ==0)
+			
+			// BREAK Condition
+			if (num == 0)
 				break;
 		}
 
@@ -62,9 +64,9 @@ public class IntegerToEnglishWord {
 
 		return result.toString();
 	}
-	
+
 	public static void main(String[] args) {
-		IntegerToEnglishWord ite = new IntegerToEnglishWord();
-		System.out.println(ite.intToEnglish(1000));
+		IntegerToEnglishWord_273 ite = new IntegerToEnglishWord_273();
+		System.out.println(ite.intToEnglish(25));
 	}
 }

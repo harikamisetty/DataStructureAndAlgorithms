@@ -71,7 +71,10 @@ public class WordLadder_127 {
 	                    String next = new String(current);
 	                    // WHEN NEXT WORD IS IN THE SET
 	                    if (set.contains(next)) {
-	                        if (next.equals(endWord)) return count + 1;
+	                        
+	                    	if (next.equals(endWord)) 
+	                        	return count + 1;
+	                        
 	                        queue.add(next);
 	                        set.remove(next);
 	                    }

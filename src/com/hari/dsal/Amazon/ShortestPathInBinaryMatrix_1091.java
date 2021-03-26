@@ -3,7 +3,7 @@ package com.hari.dsal.Amazon;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class ShortestPathInBinaryMatrix {
+public class ShortestPathInBinaryMatrix_1091 {
 	private int dir[][] = new int[][] { { 0, 1 }, { 0, -1 }, { 1, 0 }, { -1, 0 }, { 1, -1 }, { -1, 1 }, { -1, -1 },
 			{ 1, 1 } };
 			
@@ -53,7 +53,7 @@ public class ShortestPathInBinaryMatrix {
 
 	public static void main(String[] args) {
 		int[][] grid = { { 0, 0, 0 }, { 1, 1, 0 }, { 1, 1, 0 } };
-		ShortestPathInBinaryMatrix spb = new ShortestPathInBinaryMatrix();
+		ShortestPathInBinaryMatrix_1091 spb = new ShortestPathInBinaryMatrix_1091();
 		System.out.println(spb.shortestPathBinaryMatrix(grid));
 	}
 }

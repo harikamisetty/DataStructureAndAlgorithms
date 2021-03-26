@@ -23,7 +23,7 @@ public class RobotBoundedInCircle_1041 {
 	
 	public static void main(String[] args) {
 		RobotBoundedInCircle_1041 rb = new RobotBoundedInCircle_1041();		
-		System.out.println(rb.isRobotBounded("GGLLGG"));
+		System.out.println(rb.isRobotBounded("GGRRGG"));
 	}
 
 }

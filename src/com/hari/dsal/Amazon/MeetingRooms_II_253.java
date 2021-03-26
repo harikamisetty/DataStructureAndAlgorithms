@@ -1,7 +1,6 @@
 package com.hari.dsal.Amazon;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class MeetingRooms_II_253 {
 
@@ -20,18 +19,10 @@ public class MeetingRooms_II_253 {
 		}
 
 		// Sort the intervals by end time
-		Arrays.sort(end, new Comparator<Integer>() {
-			public int compare(Integer a, Integer b) {
-				return a - b;
-			}
-		});
+		Arrays.sort(end,(a,b)->a-b);
 
 		// Sort the intervals by start time
-		Arrays.sort(start, new Comparator<Integer>() {
-			public int compare(Integer a, Integer b) {
-				return a - b;
-			}
-		});
+		Arrays.sort(start, (a,b) -> a-b);
 
 		// The two pointers in the algorithm: e_ptr and s_ptr.
 		int startPointer = 0, endPointer = 0;

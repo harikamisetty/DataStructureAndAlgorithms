@@ -2,16 +2,20 @@ package com.hari.dsal.Amazon;
 
 public class CheckIfArrayPairsAreDivisiblebyk_1497 {
 	public int solve(int[] nums, int k) {
+		
 		int freq[] = new int[k];
+		
 		for (int i = 0; i < nums.length; i++)
 			++freq[nums[i] % k];
 
 		int sum = freq[0] * (freq[0] - 1) / 2;
+		
 		for (int i = 1; i <= k / 2 && i != (k - i); i++)
 			sum += freq[i] * freq[k - i];
 
 		if (k % 2 == 0)
 			sum += freq[k / 2] * (freq[k / 2] - 1) / 2;
+		
 		return sum;
 	}
 

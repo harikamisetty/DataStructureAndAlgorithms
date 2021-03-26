@@ -109,7 +109,7 @@ public class AccountsMerge_721 {
 				Arrays.asList("Mary", "mary@mail.com"));
 
 		AccountsMerge_721 am = new AccountsMerge_721();
-		List<List<String>> res = am.accountsMerge_2(accounts);
+		List<List<String>> res = am.accountsMerge(accounts);
 
 		for (final List<String> resitem : res) {
 			System.out.println("\n");

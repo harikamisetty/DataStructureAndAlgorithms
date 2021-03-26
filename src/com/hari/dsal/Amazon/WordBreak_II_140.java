@@ -27,7 +27,7 @@ public class WordBreak_II_140 {
 
 	private void wordBreakHelper(List<String> curr, List<String> result, String s, Set<String> dict, int start) {
 		if (start >= s.length()) {
-			String temp = constructString(curr);
+			String temp = String.join(" ",curr); 
 			result.add(temp);
 		}
 
@@ -40,18 +40,7 @@ public class WordBreak_II_140 {
 		}
 	}
 
-	private String constructString(List<String> tokens) {
-		StringBuilder sb = new StringBuilder();
-
-		for (int i = 0; i < tokens.size() - 1; i++) {
-			sb.append(tokens.get(i) + " ");
-		}
-
-		sb.append(tokens.get(tokens.size() - 1));
-
-		return sb.toString();
-	}
-
+	
 	// DFS
 	public List<String> wordBreak_DFS(String s, List<String> wordDist) {
 		return DFS(s, wordDist, new HashMap<String, LinkedList<String>>());

@@ -2,7 +2,6 @@ package com.hari.dsal.Amazon;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -13,14 +12,7 @@ public class ConcatenatedWords_472 {
 		List<String> result = new ArrayList<>();
 		Set<String> preWords = new HashSet<>();
 
-		Arrays.parallelSort(words, new Comparator<String>() {
-
-			@Override
-			public int compare(String s1, String s2) {
-				return s1.length() - s2.length();
-			}
-		});
-
+		Arrays.sort(words,(a,b)->a.length() - b.length());
 		for (int i = 0; i < words.length; i++) {
 			if (canForm(words[i], preWords)) {
 				result.add(words[i]);

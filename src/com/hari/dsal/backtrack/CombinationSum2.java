@@ -32,8 +32,8 @@ public class CombinationSum2 {
 	}
 	
 	public static void main(String[] args) {
-		//int A[] = {10,1,2,7,6,1,5};
-		int A[] = {1,1,2,5};
+		int A[] = {10,1,2,7,6,1,5};
+		//int A[] = {1,1,2,5};
 		
 		CombinationSum2 cm = new CombinationSum2();
 		List<List<Integer>> results = cm.getCombinations(A, 8);

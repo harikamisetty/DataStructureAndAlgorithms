@@ -14,7 +14,7 @@ public class CoinChange_2_518 {
 	}
 
 	public static void main(String[] args) {
-		int amount = 3;
+		int amount = 5;
 		int[] coins = { 1, 2, 5 };
 
 		CoinChange_2_518 cc = new CoinChange_2_518();

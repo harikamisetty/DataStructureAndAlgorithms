@@ -9,7 +9,7 @@ public class BreakaPalindrome_1328 {
 
 		return getUnPalindrome(palindrome);
 	}
-
+	// TWO POINTER Solution
 	private String getUnPalindrome(String palindrome) {
 		int palLen = palindrome.length();
 		int left = 0;

@@ -19,13 +19,13 @@ public class PairsOfSongs_1010 {
 		for (int i = 0; i < time.length; i++) {
 
 			int t = time[i];
-
 			if (map.containsKey((60 - t) % 60)) {
 				//Step 3
 				res += map.get((60 - t) % 60);
-			}
-
-			map.put(t, map.getOrDefault(t, 0) + 1);
+				map.put(t, map.getOrDefault(t, 0) + 1);
+			} else {
+				map.put(t, 1);
+			}			
 		}
 		return res;
 	}
@@ -35,5 +35,4 @@ public class PairsOfSongs_1010 {
 		PairsOfSongs_1010 ps = new PairsOfSongs_1010();
 		System.out.println(ps.numPairsDivisibleBy60(time));
 	}
-
 }

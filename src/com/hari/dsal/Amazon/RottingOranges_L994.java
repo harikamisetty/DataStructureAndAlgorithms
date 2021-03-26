@@ -64,7 +64,8 @@ public class RottingOranges_L994 {
 
 	public static void main(String[] args) {
 		RottingOranges_L994 ro = new RottingOranges_L994();
-		int[][] grid = { { 2, 1, 1 }, { 0, 1, 1 }, { 1, 0, 1 } };
+		//int[][] grid = { { 2, 1, 1 }, { 0, 1, 1 }, { 1, 0, 1 } };
+		int[][] grid = { { 2, 1, 1 }, { 1, 1, 0 }, { 0, 1, 1 } };
 		System.out.println(ro.orangesRotting(grid));
 	}
 }

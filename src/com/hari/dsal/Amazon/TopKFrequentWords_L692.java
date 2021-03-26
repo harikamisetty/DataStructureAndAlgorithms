@@ -3,9 +3,9 @@ package com.hari.dsal.Amazon;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.PriorityQueue;
 
 public class TopKFrequentWords_L692 {
 
@@ -14,7 +14,13 @@ public class TopKFrequentWords_L692 {
 		for (String word : words) {
 			map.put(word, map.getOrDefault(word, 0) + 1);
 		}
-		PriorityQueue<PQ> pq = new PriorityQueue<PQ>(new Comparator<PQ>() {
+		List<String> ans = new ArrayList<String>();
+		LinkedHashMap<String, Integer> temp = new LinkedHashMap<String, Integer>();
+		
+		map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).forEach(x->temp.put(x.getKey(), x.getValue()));
+		temp.entrySet().stream().limit(k).forEach(x->ans.add(x.getKey()));
+		
+		/*PriorityQueue<PQ> pq = new PriorityQueue<PQ>(new Comparator<PQ>() {
 			@Override
 			public int compare(PQ a, PQ b) {
 				if (a.cnt != b.cnt)
@@ -25,9 +31,9 @@ public class TopKFrequentWords_L692 {
 
 		for (String word : map.keySet())
 			pq.add(new PQ(word, map.get(word)));
-		List<String> ans = new ArrayList<String>();
+		
 		for (int i = 0; i < k; i++)
-			ans.add(pq.poll().word);
+			ans.add(pq.poll().word);*/
 		return ans;
 	}
 

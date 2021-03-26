@@ -19,6 +19,8 @@ public class CombinationSum3 {
 
 	private void combination(List<List<Integer>> ans, ArrayList<Integer> tempList, int size, int start, int target) {
 
+		if(target < 0)
+			return;
 		if (tempList.size() == size && target == 0) {
 			List<Integer> li = new ArrayList<Integer>(tempList);
 			ans.add(li);
