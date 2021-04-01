@@ -56,11 +56,15 @@ public class MaximumProfitinJobScheduling_1235 {
 	public int jobScheduling_2(int[] startTime, int[] endTime, int[] profit) {
 		int n = startTime.length;
 		int[][] jobs = new int[n][];
+	
 		for (int i = 0; i < n; i++) {
 			jobs[i] = new int[] { startTime[i], endTime[i], profit[i] };
 		}
+		
 		Arrays.sort(jobs, (a, b) -> a[1] - b[1]);
+		
 		int[] dp = new int[n + 1];
+		
 		for (int i = 0; i < n; i++) {
 			int l = -1, r = i - 1;
 			while (l < r) {
@@ -77,9 +81,9 @@ public class MaximumProfitinJobScheduling_1235 {
 	}
 
 	public static void main(String[] args) {
-		int[] startTime = { 1, 2, 3, 3 }, endTime = { 3, 4, 6,5 }, profit = { 5, 10, 40, 70 };
+		int[] startTime = { 1,2,3,4,6 }, endTime = { 3,5,10,6,9 }, profit = { 20,20,100,70,60 };
 		MaximumProfitinJobScheduling_1235 mp = new MaximumProfitinJobScheduling_1235();
-		System.out.println(mp.jobScheduling(startTime, endTime, profit));
+		System.out.println(mp.jobScheduling_2(startTime, endTime, profit));
 	}
 }
 

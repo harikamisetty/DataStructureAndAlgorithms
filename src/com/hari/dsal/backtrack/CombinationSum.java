@@ -33,7 +33,7 @@ public class CombinationSum {
 		int A[] = {2,3,5};
 		
 		CombinationSum cm = new CombinationSum();
-		List<List<Integer>> results = cm.getCombinations(A, 9);
+		List<List<Integer>> results = cm.getCombinations(A, 5);
 		
 		for(List<Integer> res:results) {
 			System.out.println("\n");

@@ -2,7 +2,7 @@ package com.hari.dsal.arrays;
 
 import java.util.HashSet;
 
-public class LongestConsecutiveSequence {
+public class LongestConsecutiveSequence_128 {
 
 	public static void main(String[] args) {
 		int A[] = { 100, 4, 200, 1, 3, 2, 3 };
