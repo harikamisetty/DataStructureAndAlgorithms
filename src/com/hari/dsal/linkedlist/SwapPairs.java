@@ -2,32 +2,26 @@ package com.hari.dsal.linkedlist;
 
 public class SwapPairs {
 	public ListNode swappairNodes(ListNode head) {
-		
-		 final int length = getLength(head);
-		    ListNode dummy = new ListNode(0);
-		    dummy.next = head;
-		    ListNode prev = dummy;
-		    ListNode curr = head;
 
-		    for (int i = 0; i < length / 2; ++i) {
-		      ListNode next = curr.next;
-		      curr.next = next.next;
-		      next.next = curr;
-		      prev.next = next;
-		      prev = curr;
-		      curr = curr.next;
-		    }
+		ListNode fakeHead = new ListNode(-1);
+		fakeHead.next = head;
+		ListNode node = fakeHead;
 
-		    return dummy.next;
-		  }
+		while (node != null & node.next != null && node.next.next != null) {
+			
+			ListNode first = node;
+			ListNode second = node.next;
+			ListNode third = node.next.next;
+			
+			first.next = third;
+			second.next = third.next;
+			third.next = second;
+			
+			node = second;
+		}
+		return fakeHead.next;
+	}
 
-		  private int getLength(ListNode head) {
-		    int length = 0;
-		    for (ListNode curr = head; curr != null; curr = curr.next)
-		      ++length;
-		    return length;
-		  }
-	
 	public static void main(String[] args) {
 		ListNode head = new ListNode(2);
 		ListNode node1 = new ListNode(4);
@@ -40,10 +34,10 @@ public class SwapPairs {
 
 		SwapPairs rll = new SwapPairs();
 		ListNode resNode = rll.swappairNodes(head);
-		
-		while(resNode != null) {
+
+		while (resNode != null) {
 			System.out.println(resNode.val);
 			resNode = resNode.next;
 		}
-	}	
+	}
 }

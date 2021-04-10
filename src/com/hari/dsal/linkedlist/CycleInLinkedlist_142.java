@@ -2,7 +2,7 @@ package com.hari.dsal.linkedlist;
 
 //http://buttercola.blogspot.com/search?q=Linked+List+Cycle
 
-public class CycleInLinkedlist {
+public class CycleInLinkedlist_142 {
 
 	public boolean hasCycle(ListNode head) { // Determine if there is a Cycle Or not
 		if (head == null)

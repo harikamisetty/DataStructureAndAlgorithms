@@ -1,21 +1,24 @@
 package com.hari.dsal.linkedlist;
 
 public class ReverseLinkedList {
-	
+
 	public ListNode reverseList(ListNode head) {
+
+		if (head == null)
+			return null;
+		if (head.next == null)
+			return head;
 		
-		if(head == null) return null;
-		if(head.next == null) return head;
-		
-		ListNode newHead = null;
-		
-		while(head != null) { // head != null only
-			ListNode next =head.next;
-			head.next = newHead;
-			newHead = head;
-			head = next;			
+		ListNode curr = head;
+		ListNode prev = null;
+
+		while (curr != null) { // head != null only
+			ListNode next = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = next;
 		}
-		return newHead;
+		return prev;
 	}
 
 	public static void main(String[] args) {
@@ -30,10 +33,10 @@ public class ReverseLinkedList {
 
 		ReverseLinkedList rll = new ReverseLinkedList();
 		ListNode resNode = rll.reverseList(head);
-		
-		while(resNode != null) {
+
+		while (resNode != null) {
 			System.out.println(resNode.val);
 			resNode = resNode.next;
 		}
-	}	
+	}
 }

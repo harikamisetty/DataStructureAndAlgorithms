@@ -1,4 +1,5 @@
-package com.hari.dsal.linkedlist;
+package com.hari.dsal.trees;
+
 
 /*
  * Given a binary tree where all the right nodes are either leaf nodes with a sibling 

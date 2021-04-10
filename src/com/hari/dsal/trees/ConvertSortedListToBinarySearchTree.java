@@ -1,4 +1,6 @@
-package com.hari.dsal.linkedlist;
+package com.hari.dsal.trees;
+
+import com.hari.dsal.linkedlist.ListNode;
 
 public class ConvertSortedListToBinarySearchTree {
 	
