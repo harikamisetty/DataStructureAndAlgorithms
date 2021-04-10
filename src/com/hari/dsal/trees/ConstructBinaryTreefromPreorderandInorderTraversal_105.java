@@ -1,6 +1,6 @@
 package com.hari.dsal.trees;
 
-public class ConstructBinaryTreefromPreorderandInorderTraversal {
+public class ConstructBinaryTreefromPreorderandInorderTraversal_105 {
 	public TreeNode buildTree(int[] preorder, int[] inorder) {
 		return helper(0, 0, inorder.length - 1, preorder, inorder);
 	}
@@ -30,7 +30,7 @@ public class ConstructBinaryTreefromPreorderandInorderTraversal {
 	}
 
 	public static void main(String[] args) {
-		ConstructBinaryTreefromPreorderandInorderTraversal cbt = new ConstructBinaryTreefromPreorderandInorderTraversal();
+		ConstructBinaryTreefromPreorderandInorderTraversal_105 cbt = new ConstructBinaryTreefromPreorderandInorderTraversal_105();
 		int[] preorder = { 3, 9, 20, 15, 7 };
 		int[] inorder = { 9, 3, 15, 20, 7 };
 		TreeNode root = cbt.buildTree(preorder, inorder);

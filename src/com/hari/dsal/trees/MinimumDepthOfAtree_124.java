@@ -3,10 +3,10 @@ package com.hari.dsal.trees;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class MinimumDepthOfAtree {
+public class MinimumDepthOfAtree_124 {
 
 	public static void main(String[] args) {
-		MinimumDepthOfAtree mdt = new MinimumDepthOfAtree();
+		MinimumDepthOfAtree_124 mdt = new MinimumDepthOfAtree_124();
 		System.out.println(mdt.minDepth(mdt.initiateTree()));
 	}
 

@@ -1,6 +1,6 @@
 package com.hari.dsal.trees;
 
-public class DeleteANodeInBST {
+public class DeleteANodeInBST_450 {
 	
 	private TreeNode deleteNode(TreeNode root, int key) {
 		
@@ -20,7 +20,7 @@ public class DeleteANodeInBST {
 			
 			TreeNode minNode = findMin(root.right);
 			root.val = minNode.val; // Chnage the value
-			root.right = deleteNode(root.right, root.val); // return from loop
+			root.right = deleteNode(root.right, root.val); // delete min value
 		}		
 		return root;
 	}
@@ -39,10 +39,10 @@ public class DeleteANodeInBST {
 		root.right = new TreeNode(30);
 
 		root.left.left = new TreeNode(5);
-		root.left.right = new TreeNode(8);
+		root.left.right = new TreeNode(15);
 		
-		root.left.right.left = new TreeNode(6);
-		root.left.right.right = new TreeNode(12);
+		root.left.right.left = new TreeNode(12);
+		root.left.right.right = new TreeNode(18);
 
 		root.right.left = new TreeNode(25);
 		root.right.right = new TreeNode(35);
@@ -52,7 +52,7 @@ public class DeleteANodeInBST {
 	}
 
 	public static void main(String[] args) {
-		DeleteANodeInBST vbst = new DeleteANodeInBST();
+		DeleteANodeInBST_450 vbst = new DeleteANodeInBST_450();
 		vbst.deleteNode(vbst.initiateTree(),10);
 	}
 }

@@ -3,7 +3,7 @@ package com.hari.dsal.trees;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BinaryTreePaths {
+public class BinaryTreePaths_257 {
 	
 	private List<String> listOfBinaryTreePaths(TreeNode root){
 		
@@ -42,7 +42,7 @@ public class BinaryTreePaths {
 	}
 
 	public static void main(String[] args) {
-		BinaryTreePaths vbst = new BinaryTreePaths();
+		BinaryTreePaths_257 vbst = new BinaryTreePaths_257();
 		List<String> reslist = vbst.listOfBinaryTreePaths(vbst.initiateTree());
 		
 		reslist.forEach(item -> {

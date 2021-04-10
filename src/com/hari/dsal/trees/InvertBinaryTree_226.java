@@ -3,7 +3,7 @@ package com.hari.dsal.trees;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class InvertBinaryTree {
+public class InvertBinaryTree_226 {
 	
 	private static TreeNode InvertBinaryTree(TreeNode root) {
 

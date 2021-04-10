@@ -51,28 +51,28 @@ public class BinaryTreeUpsideDown {
 
 		return parent;
 	}
-	
+
 	public static void main(String[] args) {
-		
+
 		TreeNode root = new TreeNode(50);
 		root.right = new TreeNode(100);
 		root.left = new TreeNode(20);
-		
+
 		preOrderData(root);
-		
+
 		TreeNode resNode = upsideDownBinaryTree2(root);
-		
+
 		preOrderData(resNode);
 	}
 
 	private static void preOrderData(TreeNode root) {
-		
-		
-		if(root == null) return;
+
+		if (root == null)
+			return;
 		preOrderData(root.left);
 		System.out.println(root.val);
 		preOrderData(root.right);
-		
+
 	}
 
 }

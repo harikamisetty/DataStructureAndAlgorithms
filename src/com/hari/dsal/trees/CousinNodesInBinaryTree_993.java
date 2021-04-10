@@ -2,7 +2,7 @@ package com.hari.dsal.trees;
 
 import java.util.List;
 
-public class CousinNodesInBinaryTree {
+public class CousinNodesInBinaryTree_993 {
 	
 
 	public boolean areCousins(Node root, Node x, Node y) {
@@ -66,7 +66,7 @@ public class CousinNodesInBinaryTree {
 	public static void main(String[] args) throws java.lang.Exception {
 		
 
-		CousinNodesInBinaryTree i = new CousinNodesInBinaryTree();
+		CousinNodesInBinaryTree_993 i = new CousinNodesInBinaryTree_993();
 		System.out
 				.println("Node " + i.getNode(2) + " and Node " + i.getNode(3) + " are cousins??? " + i.areCousins(i.intansiate(), i.getNode(2), i.getNode(3)));
 		System.out

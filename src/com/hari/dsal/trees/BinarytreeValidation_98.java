@@ -2,7 +2,7 @@ package com.hari.dsal.trees;
 
 import java.util.ArrayList;
 
-public class BinarytreeValidation {
+public class BinarytreeValidation_98 {
 	public boolean solve_1(Tree root) {
 		return checkBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
 	}

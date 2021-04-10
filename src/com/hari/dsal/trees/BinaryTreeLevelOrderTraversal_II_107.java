@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class BinaryTreeLevelOrderTraversal_II {
+public class BinaryTreeLevelOrderTraversal_II_107 {
 
 	
 	public List<List<Integer>> levelOrder(TreeNode root){
@@ -56,7 +56,7 @@ public class BinaryTreeLevelOrderTraversal_II {
 	
 	
 	public static void main(String[] args) {
-		BinaryTreeLevelOrderTraversal_II btl = new BinaryTreeLevelOrderTraversal_II();
+		BinaryTreeLevelOrderTraversal_II_107 btl = new BinaryTreeLevelOrderTraversal_II_107();
 		List<List<Integer>> retList =btl.levelOrder(btl.initiateTree());
 		
 		retList.forEach(list -> {

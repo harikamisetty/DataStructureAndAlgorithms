@@ -3,7 +3,7 @@ package com.hari.dsal.trees;
 /*
  * Given a binary tree where all the right nodes are either leaf nodes with a sibling (a left node that shares the same parent node) or empty, flip it upside down and turn it into a tree where the original right nodes turned into left leaf nodes. Return the new root.
  */
-public class BinaryTreeUpsideDown {
+public class BinaryTreeUpsideDown_156 {
 	public TreeNode upsideDownBinaryTree(TreeNode root) {
 		if (root == null) {
 			return null;
@@ -67,7 +67,7 @@ public class BinaryTreeUpsideDown {
 
 	public static void main(String[] args) {
 		
-		BinaryTreeUpsideDown btud = new BinaryTreeUpsideDown();
+		BinaryTreeUpsideDown_156 btud = new BinaryTreeUpsideDown_156();
 		TreeNode res = btud.upsideDownBinaryTree(btud.initiateTree());
 		
 		btud.preOrder(res);

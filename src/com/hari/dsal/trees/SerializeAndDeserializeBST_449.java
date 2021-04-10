@@ -3,7 +3,7 @@ package com.hari.dsal.trees;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class SerializeAndDeserializeBST {
+public class SerializeAndDeserializeBST_449 {
 	// BST
 	private static final String SEP = ",";
 	private static final String NULL = "null";
@@ -72,7 +72,7 @@ public class SerializeAndDeserializeBST {
 	}
 
 	public static void main(String[] args) {
-		SerializeAndDeserializeBST sdbst = new SerializeAndDeserializeBST();
+		SerializeAndDeserializeBST_449 sdbst = new SerializeAndDeserializeBST_449();
 		String str = sdbst.serialize(sdbst.initiateTree());
 		System.out.println(str);
 		TreeNode root = sdbst.deserialize(str);

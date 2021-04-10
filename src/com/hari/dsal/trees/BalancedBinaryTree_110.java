@@ -1,8 +1,9 @@
 package com.hari.dsal.trees;
 
-public class BalancedBinaryTree {
+public class BalancedBinaryTree_110 {
 	public static final int UNBALANCED = -1;
-
+	
+	// LOGIC BASED ON HEIGHT OF THE TREE
 	private int absHeight(TreeNode root) {
 		if (root == null)
 			return 0;

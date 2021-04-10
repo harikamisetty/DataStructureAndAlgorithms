@@ -1,6 +1,6 @@
 package com.hari.dsal.trees;
 
-public class CountCompleteTreeNodes {
+public class CountCompleteTreeNodes_222 {
 	private int height(TreeNode root) {
 		return root == null ? -1 : 1 + height(root.left);
 	}
@@ -20,7 +20,7 @@ public class CountCompleteTreeNodes {
 	}
 	
 	public static void main(String args[]) {
-		CountCompleteTreeNodes tree = new CountCompleteTreeNodes();
+		CountCompleteTreeNodes_222 tree = new CountCompleteTreeNodes_222();
 	
 		System.out.println("Level order traversal of binary tree is ");
 		System.out.println(tree.countNodes(tree.initiateTree()));

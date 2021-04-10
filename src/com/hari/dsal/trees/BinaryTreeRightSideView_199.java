@@ -3,7 +3,7 @@ package com.hari.dsal.trees;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BinaryTreeRightSideView {
+public class BinaryTreeRightSideView_199 {
 	private List<Integer> rightSideView(TreeNode root){
 		List<Integer> result = new ArrayList<>();
 		rightView(root, result,0);
@@ -40,7 +40,7 @@ public class BinaryTreeRightSideView {
 	}
 	
 	public static void main(String[] args) {
-		BinaryTreeRightSideView btrv  = new BinaryTreeRightSideView();
+		BinaryTreeRightSideView_199 btrv  = new BinaryTreeRightSideView_199();
 		List<Integer> res = btrv.rightSideView(btrv.initiateTree());
 		
 		for(Integer val : res) {

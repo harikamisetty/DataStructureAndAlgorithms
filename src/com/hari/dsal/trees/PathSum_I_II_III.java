@@ -1,9 +1,7 @@
 package com.hari.dsal.trees;
 
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 public class PathSum_I_II_III {	
 	// PathSum I

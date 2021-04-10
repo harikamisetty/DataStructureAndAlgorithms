@@ -1,8 +1,8 @@
 package com.hari.dsal.trees;
 
-public class DiameterOfBinaryTree {
+public class DiameterOfBinaryTree_543 {
 	public static void main(String[] args) {
-		DiameterOfBinaryTree dbt = new DiameterOfBinaryTree();
+		DiameterOfBinaryTree_543 dbt = new DiameterOfBinaryTree_543();
 		System.out.println(dbt.diameterOfBinaryTree(dbt.initiateTree()));
 	}
 

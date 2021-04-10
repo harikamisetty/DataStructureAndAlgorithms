@@ -3,7 +3,7 @@ package com.hari.dsal.trees;
 //Java program to insert element in binary tree 
 import java.util.LinkedList; 
 import java.util.Queue; 
-public class InsertInABinaryTree { 
+public class InsertInABinaryTree_701 { 
 	
 	/* A binary tree node has key, pointer to 
 	left child and a pointer to right child */

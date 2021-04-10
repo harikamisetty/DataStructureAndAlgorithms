@@ -1,6 +1,6 @@
 package com.hari.dsal.trees;
 
-public class BinaryTilt {
+public class BinaryTilt_563 {
 	int tilt = 0;
 
 	public int findTilt(TreeNode root) {
