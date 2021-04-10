@@ -21,13 +21,19 @@ public class test {
 	            return true;
 	        return false;        
 	    }
+	 
+	 
 	public static void main(String[] args) {
 		System.out.println(Integer.MAX_VALUE);
 		System.out.println(Integer.MAX_VALUE+1);
 		test t = new test();
 		int [] nums = {3,2,1};
 		System.out.println(t.solve(nums));
-		
+		int total =1;
+		for(int i=0;i<20;i++) {
+			total *=2;
+		}
+		System.out.println(total);
 	}
 
 }
