@@ -15,6 +15,19 @@ public class MaxAndMinSubArray_53 {
 		return max;
 	}
 
+	// BEST Solution
+	public int maxSubArray(int[] nums) {
+		int ans = Integer.MIN_VALUE;
+		int sum = 0;
+
+		for (final int num : nums) {
+			sum += num;
+			ans = Math.max(ans, sum);
+			sum = Math.max(sum, 0);
+		}
+		return ans;
+	}
+
 	private int minArraySum(int[] nums) {
 		int sum = 0, min = 0;
 
@@ -30,9 +43,10 @@ public class MaxAndMinSubArray_53 {
 	}
 
 	public static void main(String[] args) {
-		int nums[] = { -2, 1, -3, 4, -1, 2, 1, -5, 4  };
+		int nums[] = { -2, -3, -4 }; // { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
 		MaxAndMinSubArray_53 maxAMin = new MaxAndMinSubArray_53();
 		System.out.println(maxAMin.maxArraySum(nums));
+		System.out.println(maxAMin.maxSubArray(nums));
 		System.out.println(maxAMin.minArraySum(nums));
 	}
 

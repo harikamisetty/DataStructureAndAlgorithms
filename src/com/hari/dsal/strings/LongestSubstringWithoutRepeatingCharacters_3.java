@@ -18,7 +18,7 @@ When j pointer iterates all the characters of the string, we get the max length 
 import java.util.HashSet;
 import java.util.Set;
 
-public class LongestSubstringWithoutRepeatingCharacters {
+public class LongestSubstringWithoutRepeatingCharacters_3 {
 	
 	//SOlution #1 Eg: abcbcdef
 	public static int lengthOfLongestSubstringSolution1(String s) { // This is too good solution

@@ -2,11 +2,11 @@ package com.hari.dsal.arrays;
 
 import java.util.Arrays;
 
-public class FirstMissingPositive {
+public class FirstMissingPositive_41 {
 
 	public static void main(String[] args) {
 		int[] A = { 3, 4, -1, 1 };
-		FirstMissingPositive fmp = new FirstMissingPositive();
+		FirstMissingPositive_41 fmp = new FirstMissingPositive_41();
 
 		System.out.println(fmp.firstMissingPositive(A));
 		System.out.println(fmp.firstMissingPositive1(A));

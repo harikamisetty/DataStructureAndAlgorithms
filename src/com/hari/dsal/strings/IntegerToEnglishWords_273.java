@@ -1,6 +1,6 @@
 package com.hari.dsal.strings;
 
-public class IntegerToEnglishWords {
+public class IntegerToEnglishWords_273 {
 
 	public String numberToWords(int num) {
 		if (num == 0) {
@@ -18,10 +18,13 @@ public class IntegerToEnglishWords {
 		// Group Length is 4
 		for (int i = 0; i < 4; i++) {
 			int curr = num % 1000;
+			
 			if (curr > 0) {
+				
 				if (i > 0) {
 					sb.insert(0, group[i]);
 				}
+				
 				sb.insert(0, numToWordsHelper(curr, dict1, dict2));
 			}
 			num /= 1000;
@@ -60,10 +63,10 @@ public class IntegerToEnglishWords {
 
 		return result.toString();
 	}
-	
+
 	public static void main(String[] args) {
-		IntegerToEnglishWords itoe = new IntegerToEnglishWords();
-		System.out.println(itoe.numberToWords(12345));
-		
+		IntegerToEnglishWords_273 itoe = new IntegerToEnglishWords_273();
+		System.out.println(itoe.numberToWords(4000));
+
 	}
 }
