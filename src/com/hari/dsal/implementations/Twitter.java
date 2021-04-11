@@ -11,13 +11,11 @@ import java.util.PriorityQueue;
 import java.util.Set;
 
 /**
- * Your Twitter object will be instantiated and called as such:
- * Twitter obj = new Twitter();
- * obj.postTweet(userId,tweetId);
- * List<Integer> param_2 = obj.getNewsFeed(userId);
- * obj.follow(followerId,followeeId);
- * obj.unfollow(followerId,followeeId);
- */
+ *  * Your Twitter object will be instantiated and called as such:  * Twitter
+ * obj = new Twitter();  * obj.postTweet(userId,tweetId);  * List<Integer>
+ * param_2 = obj.getNewsFeed(userId);  * obj.follow(followerId,followeeId);  *
+ * obj.unfollow(followerId,followeeId);  
+ */
 
 public class Twitter {
 	Map<Integer, Set<Integer>> friendMap;
@@ -140,35 +138,38 @@ public class Twitter {
 
 		return ans;
 	}
+
+	class Tweet {
+		int tid;
+		int uid;
+		int time;
+
+		public Tweet(int uid, int tid, int time) {
+			this.uid = uid;
+			this.tid = tid;
+			this.time = time;
+		}
+
+	}
+
+	class MyTweetComparator implements Comparator<Tweet> {
+		@Override
+		public int compare(Tweet a, Tweet b) {
+			return b.time - a.time;
+		}
+	}
 }
- 
-class Tweet {
-    int tid;
-    int uid;
-    int time;
-    public Tweet(int uid, int tid, int time) {
-        this.uid = uid;
-        this.tid = tid;
-        this.time = time;
-    }
-}
- 
+
 class SeqTime {
-    int time;
-    public SeqTime() {
-        time = 0;
-    }
-     
-    public int getTime() {
-        int curTime = time;
-        time += 1;
-        return curTime;
-    }
-}
- 
-class MyTweetComparator implements Comparator<Tweet> {
-    @Override
-    public int compare(Tweet a, Tweet b) {
-        return b.time - a.time;
-    }
+	int time;
+
+	public SeqTime() {
+		time = 0;
+	}
+
+	public int getTime() {
+		int curTime = time;
+		time += 1;
+		return curTime;
+	}
 }

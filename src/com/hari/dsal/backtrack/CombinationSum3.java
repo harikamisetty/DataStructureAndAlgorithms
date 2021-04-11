@@ -7,7 +7,7 @@ public class CombinationSum3 {
 
 	public static void main(String[] args) {
 		CombinationSum3 combination = new CombinationSum3();
-		List<List<Integer>> results = combination.combinationSum3(3, 7);
+		List<List<Integer>> results = combination.combinationSum3(3, 9);
 
 		for (List<Integer> res : results) {
 			System.out.println("\n");
@@ -31,7 +31,6 @@ public class CombinationSum3 {
 			tempList.add(i);
 			combination(ans, tempList, size, i + 1, target - i);
 			tempList.remove(tempList.size() - 1);
-
 		}
 	}
 

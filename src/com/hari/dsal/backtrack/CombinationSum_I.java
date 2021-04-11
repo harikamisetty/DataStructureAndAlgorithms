@@ -24,7 +24,7 @@ public class CombinationSum_I {
 			return;
 		// && isSetContains(temp,tempset) use only when you don't have duplicates in
 		// input
-		if (target == 0 && isSetContains(temp, tempset)) {
+		if (target == 0 && !isSetContains(temp, tempset)) {
 			res.add(new ArrayList<>(temp));
 			return;
 		}
@@ -41,19 +41,19 @@ public class CombinationSum_I {
 	private boolean isSetContains(ArrayList<Integer> temp, Set<Integer> tempset) {
 		for (int element : temp) {
 			if (tempset.contains(element)) {
-				return false;
+				return true;
 			} else {
 				tempset.add(element);
 			}
 		}
-		return true;
+		return false;
 	}
 
 	public static void main(String[] args) {
 		CombinationSum_I cs_I = new CombinationSum_I();
-		int[] input = { 2,2, 3, 4, 5, 6, 7, 9 };
+		int[] input = {10,2,7,6,1,5};//{ 2, 3, 4, 5, 6, 7, 9 };
 		Arrays.sort(input);
-		List<List<Integer>> res = cs_I.getCombinations(input, 9);
+		List<List<Integer>> res = cs_I.getCombinations(input, 8);
 
 		res.forEach(val -> {
 			System.out.print("[");

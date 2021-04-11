@@ -33,8 +33,8 @@ class DijkstraShortestPath
 	// representation 
 	void dijkstra(int graph[][], int src) 
 	{ 
-		int dist[] = new int[V]; // The output array. dist[i] will hold 
-								// the shortest distance from src to i 
+		// The output array. dist[i] will hold the shortest distance from src to i 
+		int dist[] = new int[V];								
 
 		// sptSet[i] will true if vertex i is included in shortest 
 		// path tree or shortest distance from src to i is finalized 

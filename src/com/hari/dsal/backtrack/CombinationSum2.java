@@ -8,7 +8,9 @@ public class CombinationSum2 {
 	
 	public List<List<Integer>> getCombinations(int [] nums, int target){
 		List<List<Integer>> results = new ArrayList<>();
+		
 		Arrays.sort(nums);
+		
 		backtrack(results, new ArrayList<>(), nums, target,0);
 		return results;
 	}
@@ -32,7 +34,7 @@ public class CombinationSum2 {
 	}
 	
 	public static void main(String[] args) {
-		int A[] = {10,1,2,7,6,1,5};
+		int A[] = {10,2,7,6,1,5};
 		//int A[] = {1,1,2,5};
 		
 		CombinationSum2 cm = new CombinationSum2();
