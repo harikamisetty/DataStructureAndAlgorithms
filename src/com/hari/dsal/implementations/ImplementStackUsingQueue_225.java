@@ -3,10 +3,10 @@ package com.hari.dsal.implementations;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class ImplementStackUsingQueue {
+public class ImplementStackUsingQueue_225 {
 	Queue<Integer> queue;
 	
-	public ImplementStackUsingQueue() {
+	public ImplementStackUsingQueue_225() {
 		this.queue = new LinkedList<Integer>();
 	}
 	
@@ -31,7 +31,7 @@ public class ImplementStackUsingQueue {
 	}
 	
 	public static void main(String[] args) {
-		ImplementStackUsingQueue isq = new ImplementStackUsingQueue();
+		ImplementStackUsingQueue_225 isq = new ImplementStackUsingQueue_225();
 		isq.push(10);
 		isq.push(20);
 		isq.push(30);

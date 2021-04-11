@@ -1,4 +1,4 @@
-package com.hari.dsal.Google;
+package com.hari.dsal.arrays;
 
 import java.util.Stack;
 

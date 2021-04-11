@@ -2,7 +2,7 @@ package com.hari.dsal.implementations;
 
 import java.util.Stack;
 
-public class ImplementQueueUsingStack {
+public class ImplementQueueUsingStack_232 {
 	Stack<Integer> input = new Stack<>();
 	Stack<Integer> output = new Stack<>();
 	
@@ -29,7 +29,7 @@ public class ImplementQueueUsingStack {
 	}
 	
 	public static void main(String[] args) {
-		ImplementQueueUsingStack iqs = new ImplementQueueUsingStack();
+		ImplementQueueUsingStack_232 iqs = new ImplementQueueUsingStack_232();
 		iqs.push(10);
 		iqs.push(20);
 		iqs.push(30);
