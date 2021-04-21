@@ -18,13 +18,13 @@ public class IntegerToEnglishWords_273 {
 		// Group Length is 4
 		for (int i = 0; i < 4; i++) {
 			int curr = num % 1000;
-			
+
 			if (curr > 0) {
-				
+
 				if (i > 0) {
 					sb.insert(0, group[i]);
 				}
-				
+
 				sb.insert(0, numToWordsHelper(curr, dict1, dict2));
 			}
 			num /= 1000;

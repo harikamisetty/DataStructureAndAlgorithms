@@ -7,7 +7,7 @@ public class PrimeNumber {
 		if (n <= 1)
 			return false;
 		// Check from 2 to n-1
-		for (int i = 2; i < n; i++) // Prime number means it will be divid by only with 1 and itself. 
+		for (int i = 2; i < n; i++) // Prime number means it will be divide by only with 1 and itself. 
 			if (n % i == 0)
 				return false;
 		return true;

@@ -37,7 +37,9 @@ public class LongestCommonPrefix {
 
 		char[] chr1 = strs[0].toCharArray();
 		char[] chr2 = strs[strs.length - 1].toCharArray();
+		
 		StringBuilder res = new StringBuilder("");
+		
 		for (int i = 0; i < chr1.length; i++) {
 			if (chr1[i] == chr2[i])
 				res = res.append(chr1[i]);

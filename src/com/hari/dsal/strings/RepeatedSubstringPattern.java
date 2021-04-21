@@ -7,7 +7,9 @@ public class RepeatedSubstringPattern {
 		int l = str.length();
 
 		for (int i = l / 2; i >= 1; i--) {
+
 			if (l % i == 0) {
+
 				int m = l / i;
 				String subS = str.substring(0, i);
 				StringBuilder sb = new StringBuilder();
@@ -22,7 +24,7 @@ public class RepeatedSubstringPattern {
 		}
 		return false;
 	}
-	
+
 	public static void main(String[] args) {
 		RepeatedSubstringPattern rsp = new RepeatedSubstringPattern();
 		String str = "howhowhowhowhow";
