@@ -35,7 +35,7 @@ public class BasicCalculator_II {
 					stack.push(stack.pop() / num);
 				}
 				sign = s.charAt(i); // Very Important step
-				num = 0; // Defailut it to 0 Since it's already copied
+				num = 0; // Default it to 0 Since it's already copied
 			}
 		}
 		

@@ -1,6 +1,6 @@
 package com.hari.dsal.strings;
 
-public class FirstUniqueCharacterInaString {
+public class FirstUniqueCharacterInaString_387 {
 
 	public int firstUniqChar(String s) {
 		if (s == null || s.length() == 0) {
@@ -25,7 +25,7 @@ public class FirstUniqueCharacterInaString {
 	}
 	
 	public static void main(String[] args) {
-		FirstUniqueCharacterInaString fucs = new FirstUniqueCharacterInaString();
+		FirstUniqueCharacterInaString_387 fucs = new FirstUniqueCharacterInaString_387();
 		System.out.println(fucs.firstUniqChar("bd"));
 	}
 

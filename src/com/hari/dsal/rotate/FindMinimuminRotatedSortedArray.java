@@ -41,10 +41,18 @@ public class FindMinimuminRotatedSortedArray {
 		}
 		return a[l];
 	}
+	private int findminRecursive(int [] arr,int l,int r) {
+		
+		int mid = (l+r) / 2;
+		
+		if(arr[mid])
+		
+		
+	}
 	
 	public static void main(String[] args) {
-		//int[] A= {4,5,6,7,0,1,2,3};
-		int[] A= {3,2,1,0,4,5,6,7,8};
+		int[] A= {4,5,6,7,0,1,2};
+		//int[] A= {3,2,1,0,4,5,6,7,8};
 		FindMinimuminRotatedSortedArray fmrsa = new FindMinimuminRotatedSortedArray();
 		System.out.println(fmrsa.findMin(A));
 		System.out.println(fmrsa.findMinimum(A));

@@ -88,4 +88,11 @@ public class ShortestDistancefromAllBuildings {
 
 		queue.offer(row * n + col);
 	}
+	
+	
+	public static void main(String[] args) {
+		int [][] grid = {{1,0,2,0,1},{0,0,0,0,0},{0,0,1,0,0}};
+		ShortestDistancefromAllBuildings sdfab = new ShortestDistancefromAllBuildings();
+		System.out.println(sdfab.shortestDistance(grid));
+	}
 }
