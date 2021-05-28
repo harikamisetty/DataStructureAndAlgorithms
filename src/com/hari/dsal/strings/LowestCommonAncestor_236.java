@@ -1,6 +1,6 @@
 package com.hari.dsal.strings;
 
-public class LowestCommonAncestor {
+public class LowestCommonAncestor_236 {
 	
 	private TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 		if (root == null || root == p || root == q) {
@@ -15,7 +15,7 @@ public class LowestCommonAncestor {
 	}
 	
 	public static void main(String[] args) {
-		LowestCommonAncestor lc = new LowestCommonAncestor();
+		LowestCommonAncestor_236 lc = new LowestCommonAncestor_236();
 		TreeNode a = new TreeNode(20);
 		TreeNode b = new TreeNode(30);
 		System.out.println(lc.lowestCommonAncestor(lc.initiateTree(),a ,b));

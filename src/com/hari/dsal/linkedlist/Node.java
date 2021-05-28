@@ -3,7 +3,7 @@ package com.hari.dsal.linkedlist;
 public class Node<T> implements Comparable<T>{
 	
 	private T item;
-	private Node<T> next;
+	Node<T> next;
 	
 	public T getItem() {
 		return item;
@@ -25,5 +25,12 @@ public class Node<T> implements Comparable<T>{
 		} else {
 			return 1;
 		}
+	}
+	
+	int data;
+	Node(int d)
+	{
+		data = d;
+		next = null;
 	}
 }

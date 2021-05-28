@@ -1,10 +1,13 @@
 package com.hari.dsal.trees;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SearchInBST {
 
 	public static void main(String[] args) {
 		SearchInBST sbt = new SearchInBST();
-		System.out.println(sbt.searchBST(sbt.initiateTree(), 35).val);
+		System.out.println(sbt.solve(sbt.initiateTree(), 35));
 
 	}
 
@@ -48,4 +51,26 @@ public class SearchInBST {
 
 		return res2;
 	}
+	
+	 public boolean solve(TreeNode root, int val) {
+	      List<Integer> res = new ArrayList<>();
+
+	      solveHelper(root,val,res);
+
+	      for(int cal : res){
+	        if(cal == val)
+	            return true;
+	      }
+	    
+	         return false; 
+	    }
+
+	    private void solveHelper(TreeNode root, int val, List<Integer> res){
+
+	        if(root != null){
+	            res.add(root.val);
+	            solveHelper(root.right,val,res);
+	            solveHelper(root.left,val,res);
+	        }
+	    }
 }

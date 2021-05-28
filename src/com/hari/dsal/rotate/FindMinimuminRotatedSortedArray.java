@@ -41,14 +41,6 @@ public class FindMinimuminRotatedSortedArray {
 		}
 		return a[l];
 	}
-	private int findminRecursive(int [] arr,int l,int r) {
-		
-		int mid = (l+r) / 2;
-		
-		if(arr[mid])
-		
-		
-	}
 	
 	public static void main(String[] args) {
 		int[] A= {4,5,6,7,0,1,2};

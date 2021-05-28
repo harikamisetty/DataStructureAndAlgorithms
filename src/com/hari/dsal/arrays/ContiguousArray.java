@@ -22,7 +22,7 @@ public class ContiguousArray {
 	    
 	    public static void main(String[] args) {
 	    	ContiguousArray ca = new ContiguousArray();
-	    	int[] nums = {0,0,0,1,1,1};
+	    	int[] nums = {0,1,0};
 			System.out.println(ca.findMaxLength(nums ));
 		}
 	}
