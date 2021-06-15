@@ -30,4 +30,25 @@ public class MaximumPathSum {
          
         return pathSum;
     }
+    
+    // Solution 2
+    int maxsum = Integer.MIN_VALUE;
+
+    public int solve(Tree root) {
+        if(root == null)
+            return 0;
+           maxpathsum(root);
+           return  maxsum;        
+    }
+
+    private int maxpathsum(Tree root){
+        if(root == null)
+            return 0;
+
+        int left = maxpathsum(root.left);
+        int right = maxpathsum(root.right);      
+        maxsum= Math.max(left,right)+root.val;
+
+        return maxsum;
+    }
 }

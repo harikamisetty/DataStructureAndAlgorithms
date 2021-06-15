@@ -1,7 +1,9 @@
 package com.hari.dsal.trees;
 
+import java.util.ArrayList;
+
 public class ValidateBinarySearchTree {
-	
+
 	private static void validateBinarySearchTree(TreeNode root) {
 		System.out.println(isValidBST(root));
 	}
@@ -30,6 +32,31 @@ public class ValidateBinarySearchTree {
 		if (inOrderTraverse(node.right) == false)
 			return false;
 
+		return true;
+	}
+
+	// SOLUTION #2
+	public boolean isValidBST_2(TreeNode root) {
+		ArrayList<Integer> A = new ArrayList<Integer>();
+		InorderTraversal(root, A);
+		return isSorted(A);
+	}
+
+	public static void InorderTraversal(TreeNode Root, ArrayList<Integer> A) {
+
+		if (Root != null) {
+			InorderTraversal(Root.left, A);
+			A.add(Root.val);
+			InorderTraversal(Root.right, A);
+		}
+	}
+
+	public static boolean isSorted(ArrayList<Integer> A) {
+		for (int i = 1; i < A.size(); i++) {
+
+			if (A.get(i) <= A.get(i - 1))
+				return false;
+		}
 		return true;
 	}
 

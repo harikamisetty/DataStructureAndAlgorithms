@@ -11,6 +11,7 @@ public class KthLargestElement {
 		KthLargestElement ls= new KthLargestElement();
 		System.out.println(largestElement(A, 2));
 		System.out.println(ls.largestString(strs,2));
+		System.out.println(smallestElement(A,2));
 	}
 	// Ayyays Solution
 	private static int largestElement(int[] a, int k) {
@@ -29,6 +30,24 @@ public class KthLargestElement {
 		}
 		return q.peek();
 	}
+	
+	// Ayyays Solution
+		private static int smallestElement(int[] a, int k) {
+			// 1. Method 1 by using the Arrays.sort
+			Arrays.sort(a);
+			System.out.println(a[a.length - k]);
+
+			// 2. Using PriorityQueue
+			PriorityQueue<Integer> q = new PriorityQueue<Integer>(k,(p,b)->b-p);
+			for (int i : a) {
+				q.offer(i);
+	 
+				if (q.size() > k) {
+					q.poll();
+				}
+			}
+			return q.peek();
+		}
 	
 	// Strings Solution
 	private String largestString(String[] strs, int k) {
